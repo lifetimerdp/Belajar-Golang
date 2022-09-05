@@ -1,0 +1,13 @@
+Golang atau singkatan dari Go Language adalah bahasa pemrograman yang dibuat oleh Robert Griesemer, Rob Pike, dan Ken Thompson pada tahun 2009.
+Golang dibangun menggunakan bahas mesin, yang membuat bahasa ini memiliki kecepatan dan juga kemanan yang tinggi.
+
+website resmi: https://go.dev
+
+Keunggulan:
+- Dapat digunakan untuk merancang aplikasi berbasis web dengan keamanan yang tinggi.
+- Open source.
+- Algoritma dan struktur data yang mudah untuk dipelajari.
+- Mampu digunakan untuk mengembangkan kode server jaringan, terutama pada layanan mikro dan web server.
+- Digunakan untuk sistem yang kompleks dan dengan kinerja yang tinggi.
+- Dan lainnya.
+
