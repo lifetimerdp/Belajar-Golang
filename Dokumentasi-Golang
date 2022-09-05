@@ -1,0 +1,25 @@
+install golang versi terbaru. Download dan install di website resminya -> https://go.dev/doc/install
+Ikuti instruksi yang diberikan di website golang
+
+1. Membuat file golang
+   --> buat folder khusus golang
+   --> touch hello.go
+ 
+ 2. Menulis hello world
+   --> sudo nano hello.go
+   --> isi filenya yaitu:
+   
+   package main
+   
+   import "fmt"
+   
+   func main() {
+      fmt.Println("Hello World")
+   }
+
+3. Compile file go
+   --> go build hello.go
+   --> hasilnya adalah file yang sama, namun ekstensi .go telah dihilangkan
+
+4. Jalankan file go
+   --> sudo ./hello
