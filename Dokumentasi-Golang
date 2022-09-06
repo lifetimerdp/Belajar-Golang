@@ -9,7 +9,7 @@ Ikuti instruksi yang diberikan di website golang
  2. Menulis hello world
    --> sudo nano hello.go
    --> isi filenya yaitu:
-   
+   ------------------------------
    package main
    
    import "fmt"
@@ -17,7 +17,11 @@ Ikuti instruksi yang diberikan di website golang
    func main() {
       fmt.Println("Hello World")
    }
+   ------------------------------
 
+   ket: - "package main", dan func main adalah perintah wajib untuk setiap file golang
+        - "fmt" digunakan untuk melakukan print
+        
 
 3. Jalankan filenya
    --> go run hello.go
@@ -60,3 +64,30 @@ Ikuti instruksi yang diberikan di website golang
        - float64     : 2.23 x 10 pangkat -308 maksnya 1.80 x 10 pangkat 308
        - complex64   : nilainya sama dengan float32, tapi umumnya digunakan untuk pertihungan yang kompleks dan terdapat penggambaran (seperti statistik)
        - complex128  : nilainya sama dengan float64, tapi umumnya digunakan untuk pertihungan yang kompleks dan terdapat penggambaran (seperti statistik)
+
+
+7. Tipe data Boolean di golang
+   --> Terdapat 2 jenis data Boolean:
+       - true artinya Benar
+       - false artinya Salah
+
+
+8. Tipe data String di golang
+   --> string adalah kumpulan karakter (huruf, angka, simbol, dll). Jika kalian ingin mengetahui tipe data string, ciri-cirinya adalah
+       setiap data ber-tipe string, pasti menggunakan simbol petik dua diawal dan diakhir. Contoh tipe data string: "Agus beli ikan 5 ekor dipasar"
+
+   --> terdapat beberapa function yang sering digunakan untuk tipe data string, seperti:
+       - function len: digunakan untuk menghitung jumlah karakter didalam string.
+         cara pakai --> len("Agus beli ikan 5 ekor dipasar") --> outputnya: 29
+         karena spasi juga ikut dihitung
+   
+   --> cara melacak string lewat angka (di golang, dihitung mulai dari 0 bukan 1)               ++ Belum selesai ++
+       - "Agus"[2] outputnya: u  hasilnya "u" bukan "g" karena hitunganya dimulai dari 0
+                                 ----------
+                                    Agus
+                                    0123
+                                 ----------
+       - "Deni"[3] outputnya: i
+
+
+9. 
