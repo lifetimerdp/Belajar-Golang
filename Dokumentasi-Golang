@@ -5,6 +5,7 @@ Ikuti instruksi yang diberikan di website golang
    --> buat folder khusus golang
    --> touch hello.go
  
+ 
  2. Menulis hello world
    --> sudo nano hello.go
    --> isi filenya yaitu:
@@ -17,9 +18,39 @@ Ikuti instruksi yang diberikan di website golang
       fmt.Println("Hello World")
    }
 
-3. Compile file go
-   --> go build hello.go
-   --> hasilnya adalah file yang sama, namun ekstensi .go telah dihilangkan
 
-4. Jalankan file go
-   --> sudo ./hello
+3. Jalankan filenya
+   --> go run hello.go
+   --> perintah "go run namafile.go" hanya direkomendasikan untuk mencoba menjalankan file golang
+       yang masih tahap development atau masih dalam tahap uji coba. Jika sudah selesai, kalian
+       harus melakukan yang namanya "compile" dan hasil compile filenya yang akan digunakan!!
+
+
+4. Compile file go
+   --> go build hello.go
+   --> hasilnya adalah file yang sama, yaitu file dengan nama hello (ekstensi .go telah dihilangkan)
+
+
+5. Jalankan file go
+   --> ./hello atau sudo ./hello
+
+
+6. Tipe data number di Golang
+   --> Terdapat 2 jenis angka di golang:
+       - integer: angka biasa 1, 2, 3, 4, dst
+       - floating point: angka dengan koma 1.8, 2.5, 6.7
+         { titik disitu adalah koma (saya tulis sama seperti format kalkulator, agar lebih mudah) }
+   --> "Integer" dibagi lagi ke dalam 8 jenis tipe data:
+       - int8  : untuk angka -128 sampai maksimumnya 127
+       - int16 : untuk angka -32768 sampai maksimumnya 32767
+       - int32 : untuk angka -2147483648 sampai maksimumnya 2147483647 (sekitar -2 sekian miliar sampai 2 sekian miliar)
+       - int64 : untuk angka -9223372036854775808 sampai maks 9223372036854775807
+                 (sekitar -9 sekian Kuantiliun sampai 9 sekian Kuantiliun). Kuantiliun (biasanya disebut angka dengan nol 18),
+                 ini sebutan angka diatas kuadtriliun
+       - uint8  : untuk angka 0 sampai maks 255
+       - uint16 : untuk angka 0 sampai maks 65535
+       - uint32 : untuk angka 0 sampai maks 4294967295
+       - uint64 : untuk angka 0 sampai maks 18446744073709551615 (sekitar 18 Kuantiliun)
+         { Sesuaikan dengan kebutuhan kalian. Misalnya untuk data ujian siswa, gunakan int8 (karena dibawah 127).
+           Kalau tidak sesuai, akan membebani kinerja dan jadi sia-sia }
+   --> 
