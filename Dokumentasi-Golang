@@ -40,6 +40,7 @@ Ikuti instruksi yang diberikan di website golang
        - integer: angka biasa 1, 2, 3, 4, dst
        - floating point: angka dengan koma 1.8, 2.5, 6.7
          { titik disitu adalah koma (saya tulis sama seperti format kalkulator, agar lebih mudah) }
+         
    --> "Integer" dibagi lagi ke dalam 8 jenis tipe data:
        - int8  : untuk angka -128 sampai maksimumnya 127
        - int16 : untuk angka -32768 sampai maksimumnya 32767
@@ -53,4 +54,9 @@ Ikuti instruksi yang diberikan di website golang
        - uint64 : untuk angka 0 sampai maks 18446744073709551615 (sekitar 18 Kuantiliun)
          { Sesuaikan dengan kebutuhan kalian. Misalnya untuk data ujian siswa, gunakan int8 (karena dibawah 127).
            Kalau tidak sesuai, akan membebani kinerja dan jadi sia-sia }
-   --> 
+           
+   --> "Floating point" dibagi menjadi 4 tipe data:
+       - float32     : 1.18 x 10 pangkat -38 maksnya 3.4 x 10 pangkat 38
+       - float64     : 2.23 x 10 pangkat -308 maksnya 1.80 x 10 pangkat 308
+       - complex64   : nilainya sama dengan float32, tapi umumnya digunakan untuk pertihungan yang kompleks dan terdapat penggambaran (seperti statistik)
+       - complex128  : nilainya sama dengan float64, tapi umumnya digunakan untuk pertihungan yang kompleks dan terdapat penggambaran (seperti statistik)
