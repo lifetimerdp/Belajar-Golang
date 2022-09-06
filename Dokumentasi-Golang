@@ -90,4 +90,38 @@ Ikuti instruksi yang diberikan di website golang
        - "Deni"[3] outputnya: i
 
 
-9. 
+9. Variable
+   --> variable adalah tempat atau wadah yang digunakan untuk menyimpan data. Di golang setiap variable yang dibuat hanya dapat menyimpan
+       satu jenis data yang sama. (Beda dengan bahasa pemrograman lainnya, misalnya javascript, python, dll).
+   
+   --> cara pakai: var namavariablenya tipe-datanya
+       ------------------------------------------
+       var agus string
+       
+       agus = "agus kurnia"
+       fmt.Println(agus)   outputnya: agus kurnia
+       -------------------------------------------
+       
+   --> Bisa juga langsung buat variable tanpa perlu di deklarasikan tipe datanya
+       ------------------------------------------
+       var agus = "agus kurnia"
+       fmt.Println(agus)   outputnya: agus kurnia
+       ------------------------------------------
+       
+   --> Untuk tipe data number, lebih baik sebutkan secara spesifik, tipe data apa yang digunakan di variable nya.
+       Tujuannya, agar variablenya menggunakan tipe data sesuai nilai minimum dan maksimumnya (alasan lainnya, agar tidak membebani kinerja memori).
+       Kalau tidak disebutkan, tipe data integernya akan mengikuti sesuai tipe data koomputer. komputer 32 bit, maka int32
+       komputer 64 bit, maka int64.
+       ------------------------------------------
+       var age uint8 = 27
+       fmt.Println(age)    outputnya: 27
+       ------------------------------------------
+       
+   --> Membuat variable tanpa harus menggunakan kata "var" bisa dilakukan jika menggunakan titik dua :
+       ----------------------------
+       namaku := "agus kurnia"
+       fmt.Println(namaku)    outputnya: agus kurnia
+       
+       namaku := "denny santos"
+       fmt.Println(namaku)    outputnya: denny santos
+       
