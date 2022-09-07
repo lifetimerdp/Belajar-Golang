@@ -164,6 +164,7 @@ Ikuti instruksi yang diberikan di website golang
        fmt.Println(firstname, lastname, age)    outputnya: deny santos 19
        ------------------------------------------------------------------
 
+
 10. Konversi tipe data
       --> Konversi tipe data digunakan untuk mengubah tipe data dari variable tertentu. Misalnya int8 diubah ke int32 atau uint16, dst
           ------------------------------------------------------------------------------
@@ -174,6 +175,7 @@ Ikuti instruksi yang diberikan di website golang
           var indeks_nama = string(namaku[2])
           fmt.Println(indeks_nama)              outputnya: u
           ------------------------------------------------------------------------------
+
 
 11. Tipe deklarasi atau type deklarations
       --> tipe deklarasi adalah kemampuan untuk membuat ulang tipe data baru dari tipe data yang sudah ada sebelumnya. Umumnya ini digunakan
@@ -192,6 +194,7 @@ Ikuti instruksi yang diberikan di website golang
           var jumlah_siswa maks = 200
           fmt.Println(jumlah_siswa) output: 200
           --------------------------------------
+
 
 12. Operator matematika
       --> operasi matematika di golang, sama seperti bahasa pemrograman lainnya.
@@ -224,7 +227,8 @@ Ikuti instruksi yang diberikan di website golang
           b -= 1  ==> sama dengan b = b - 1
           fmt.Println(a)      output: 4
           ---------------------------------
-       
+
+
  13. Unary operator
       --> unary operator adalah cara cepat atau bisa kalian anggap jalan pintas dalam menggunakan operator, yang dimaksud operator adalah seperti
           penjumlahan, pengurangan, negatif, positif, dan kebalikan dari suatu nilai boolean.
@@ -243,6 +247,7 @@ Ikuti instruksi yang diberikan di website golang
           a++
           fmt.Println(a)      output: 11
           ------------------------------
+
 
 14. Operator Perbandingan
       --> Operator perbandingan adalah kemampuan untuk membandingkan antara satu angka dengan angka lain atau satu kondisi dengan kondisi lainnya.
@@ -278,7 +283,8 @@ Ikuti instruksi yang diberikan di website golang
           var value1_dan_value2 = value1 != value2
           fmt.Println(value1_dan_value2)           output: true, karena value1 (10) tidak sama dengan value2 (20)
           ---------------------------------------------------------------------------------------------------------------
-          
+
+
 15. Operator perbandingan khusus untuk tipe data Boolean
       --> Tipe data Boolean mempunyai 3 jenis operator khusus (tipe data lainnya seperti string, number tidak dapat menggunakannya)
           - && artinya AND (dalam bahasa indonesia artinya dan)
@@ -344,8 +350,9 @@ Ikuti instruksi yang diberikan di website golang
             output: true, karena dari kedua perbandingan AND diatas, hasilnya false
             -----------------------------------------------------------------------
             
-            note: Apakah kalian sudah puyeng ehhe? jika masih sanggup, lanjuuutttt...
-            
+            note: Apakah kalian sudah puyeng hehe? jika masih sanggup, lanjuuutttt...
+
+
 16. Array
       --> Array adalah "kumpulan data". Kumpulan data tersebut haruslah tipe data yang sama.
           ----------------
@@ -381,6 +388,7 @@ Ikuti instruksi yang diberikan di website golang
           fmt.Println(angka[4])     output: 50
           ---------------------------------------------------------
 
+
 17. Beberapa Function
       - len(nama_array) ==> digunakan untuk mendapatkan "panjang" data dalam array
       - array[indeks] ==> digunakan untuk mendapatkan data dalam array, sesuai nomor indeksnya (biasanya digunakan bersamaan dengan Prinln)
@@ -392,4 +400,6 @@ Ikuti instruksi yang diberikan di website golang
             
             contoh: {10, 20, 30} ==> panjang indeks atau jumlah indeksnya adalah 2 (indeks 0 = 10, indeks 1 = 20, indeks 2 = 30)
                                  ==> panjang datanya adalah 3
+
+
 18. 
