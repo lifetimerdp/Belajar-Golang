@@ -279,3 +279,73 @@ Ikuti instruksi yang diberikan di website golang
           fmt.Println(value1_dan_value2)           output: true, karena value1 (10) tidak sama dengan value2 (20)
           ---------------------------------------------------------------------------------------------------------------
           
+15. Operator perbandingan khusus untuk tipe data Boolean
+      --> Tipe data Boolean mempunyai 3 jenis operator khusus (tipe data lainnya seperti string, number tidak dapat menggunakannya)
+          - && artinya AND (dalam bahasa indonesia artinya dan)
+          - || artinya OR (dalam bahasa indonesia artinya atau)
+          - !  artinya NOT (dalam bahasa indonesia artinya tidak)
+          
+          / operator && akan bernilai true "jika kedua perbandingan bernilai true atau benar" /
+            --------------------------------------
+            contoh 1:
+                     (10 > 5) && (5 < 10)
+                        true        true
+                      
+            output: true, karena dua-duanya true
+            --------------------------------------
+            contoh 2:
+                     (10 > 1) && (10 < 1)
+                        true       false
+                           
+            output: false, karena salah satu false
+            --------------------------------------
+            
+            
+          / operator || akan bernilai true "jika salah satu dari perbandingan bernilai true atau benar" /
+            ------------------------------------------------------------------------
+            contoh 1:
+                     (1 == 1) || (10 > 11)
+                       true        false
+            
+            output: true, karena salah satu true
+            ------------------------------------------------------------------------
+            contoh 2:
+                     (1 < 1) || (1 == 2)
+                       false      false
+                       
+            output: false, karena tidak ada yang true dari kedua perbandingan diatas
+            ------------------------------------------------------------------------
+            
+            
+          / operator ! akan bernilai true "jika perbandingan adalah salah atau false" /
+            -----------------------------------------------------------------------
+            contoh 1:
+                     !(1 > 2)
+                       false
+                     
+            output: true, karena dari perbandingan 1 dengan 2, hasilnya false
+            -----------------------------------------------------------------------
+            contoh 2:
+                     !((1 > 1) || (1 < 1))
+                        false      false
+            
+            output: true, karena dari kedua perbandingan OR diatas, hasilnya false
+            -----------------------------------------------------------------------
+            contoh 3:
+                     !((1 == 1) && (2 > 1))
+                         true       true
+            
+            output: false, karena dari kedua perbandingan AND diatas, hasilnya true
+            -----------------------------------------------------------------------
+            contoh 4:
+                     !((2 >= 1) && (0 > 1))
+                         true       false
+            
+            output: true, karena dari kedua perbandingan AND diatas, hasilnya false
+            -----------------------------------------------------------------------
+            
+            note: Apakah kalian sudah puyeng ehhe? jika masih sanggup, lanjuuutttt...
+            
+16. Array
+      --> Array adalah "kumpulan data". Kumpulan data tersebut haruslah tipe data yang sama.
+          -----------
