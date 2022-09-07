@@ -348,4 +348,48 @@ Ikuti instruksi yang diberikan di website golang
             
 16. Array
       --> Array adalah "kumpulan data". Kumpulan data tersebut haruslah tipe data yang sama.
-          -----------
+          ----------------
+          var nama [3]string
+          
+          nama[0] = "deny"
+          nama[1] = "agus"
+          nama[2] = "dimas"
+          
+          fmt.Println(nama[0])   output: deny
+          fmt.Println(nama[1])   output: agus
+          fmt.Println(nama[2])   output: dimas
+      
+      --> cara cepat membuat array
+          --------------------------------------------------------
+          var angka = [5]int8 {
+            10,
+            20,
+            30,
+            40,
+            50,
+          }
+          
+          
+          fmt.Println(angka)        output: { 10, 20, 30, 40, 50 }
+          
+          / ATAU /
+          
+          fmt.Println(angka[0])     output: 10
+          fmt.Println(angka[1])     output: 20
+          fmt.Println(angka[2])     output: 30
+          fmt.Println(angka[3])     output: 40
+          fmt.Println(angka[4])     output: 50
+          ---------------------------------------------------------
+
+17. Beberapa Function
+      - len(nama_array) ==> digunakan untuk mendapatkan "panjang" data dalam array
+      - array[indeks] ==> digunakan untuk mendapatkan data dalam array, sesuai nomor indeksnya (biasanya digunakan bersamaan dengan Prinln)
+      - array[indeks] = value ==> digunakan untuk mengubah data dalam array, sesuai nomor indeksnya
+      
+      note: "panjang data" berbeda dengan "jumlah indeks dalam array".
+            perbedaannya adalah, panjang data dihitung dari 1.
+            Sedangkan indeks, dihitung dari 0.
+            
+            contoh: {10, 20, 30} ==> panjang indeks atau jumlah indeksnya adalah 2 (indeks 0 = 10, indeks 1 = 20, indeks 2 = 30)
+                                 ==> panjang datanya adalah 3
+18. 
