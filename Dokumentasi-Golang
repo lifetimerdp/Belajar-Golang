@@ -78,10 +78,15 @@ Ikuti instruksi yang diberikan di website golang
 
    --> terdapat beberapa function yang sering digunakan untuk tipe data string, seperti:
        - function len: digunakan untuk menghitung jumlah karakter didalam string.
-         cara pakai --> len("Agus beli ikan 5 ekor dipasar") --> outputnya: 29
-         karena spasi juga ikut dihitung
+       
+         cara pakai:
+         -----------------------------------------------------
+         len("Agus beli ikan 5 ekor dipasar")    outputnya: 29
+         -----------------------------------------------------
+         
+         note: spasi juga ikut dihitung
    
-   --> cara melacak string lewat angka (di golang, dihitung mulai dari 0 bukan 1)               ++ Belum selesai ++
+   --> cara melacak string lewat angka (di golang, dihitung mulai dari 0 bukan 1)
        - "Agus"[2] outputnya: u  hasilnya "u" bukan "g" karena hitunganya dimulai dari 0
                                  ----------
                                     Agus
@@ -122,6 +127,155 @@ Ikuti instruksi yang diberikan di website golang
        namaku := "agus kurnia"
        fmt.Println(namaku)    outputnya: agus kurnia
        
-       namaku := "denny santos"
+       namaku = "denny santos"
        fmt.Println(namaku)    outputnya: denny santos
+       ----------------------------
        
+       - kelemahan menggunakan ini adalah, kita tidak dapat mendeklarasikan tipe datanya. misalnya, age int8 := 18   outputnya: error
+       
+   --> Multiple variable
+       ------------------------------------------------------------------
+       var (
+         firstname = "agus"
+         lastname = "kurnia"
+         age = 27
+       )
+       
+       fmt.Println(firstname, lastname, age)    outputnya: agus kurnia 27
+       ------------------------------------------------------------------
+       
+   --> Constant variable
+       variable yang tidak dapat diubah jika sudah di deklarasikan. Ini mirip dengan variable constant di python (jika anda pernah mempelajarinya)
+       -----------------------------------------
+       const namaku = "agus"
+       
+       // error nilainya jika diubah
+       const namaku = "deny"     outputnya: error
+       ------------------------------------------
+       
+   --> Multipe constant variable
+       ------------------------------------------------------------------
+       const (
+         firstname = "deny"
+         lastname = "santos"
+         age = 19
+       )
+       
+       fmt.Println(firstname, lastname, age)    outputnya: deny santos 19
+       ------------------------------------------------------------------
+
+10. Konversi tipe data
+      --> Konversi tipe data digunakan untuk mengubah tipe data dari variable tertentu. Misalnya int8 diubah ke int32 atau uint16, dst
+          ------------------------------------------------------------------------------
+          var statistik1 int8 = 100
+          var perbarui_statistik1 int16 = int16(statistik1)   -> nilai maksnya bertambah
+
+          var namaku = "agus"
+          var indeks_nama = string(namaku[2])
+          fmt.Println(indeks_nama)              outputnya: u
+          ------------------------------------------------------------------------------
+
+11. Tipe deklarasi atau type deklarations
+      --> tipe deklarasi adalah kemampuan untuk membuat ulang tipe data baru dari tipe data yang sudah ada sebelumnya. Umumnya ini digunakan
+          untuk membuat alias (persamaan lain) dari tipe data, dengan tujuan membuat tipe datanya lebih mudah untuk dipahami.
+
+          Contoh: Membuat alias untuk tipe data string, int8, dan boolean
+          -------------------------------------
+          type karakter string
+
+          cara pakai:
+          var namaku karakter = "agus"
+          fmt.Println(namaku)    output: agus
+
+          type maks 255 uint8
+
+          var jumlah_siswa maks = 200
+          fmt.Println(jumlah_siswa) output: 200
+          --------------------------------------
+
+12. Operator matematika
+      --> operasi matematika di golang, sama seperti bahasa pemrograman lainnya.
+
+          + untuk penjumlahan
+          - untuk pengurangan
+          / untuk pembagian
+          * untuk perkalian
+          % untuk sisa pembagian atau modulus
+
+          ----------------------------------------
+          var a = 10
+          var b = 20
+          var hasil_jumlah = a + b
+          fmt.Println(hasil_jumlah)     output: 30
+
+          var a = 2
+          var b = 5
+          var hasil_kali = a * b
+          fmt.Println(hasil_kali)       output: 10
+          ----------------------------------------
+
+      --> Menyingkat operasi (berlaku jika variable sebelumnya sudah ada)
+          ---------------------------------
+          a = 5
+          a += 1  ==> sama dengan a = a + 1
+          fmt.Println(a)      output: 6
+
+          b = 5
+          b -= 1  ==> sama dengan b = b - 1
+          fmt.Println(a)      output: 4
+          ---------------------------------
+       
+ 13. Unary operator
+      --> unary operator adalah cara cepat atau bisa kalian anggap jalan pintas dalam menggunakan operator, yang dimaksud operator adalah seperti
+          penjumlahan, pengurangan, negatif, positif, dan kebalikan dari suatu nilai boolean.
+
+          ++ bertambah 1
+          -- berkurang 1
+          - negatif
+          + positif
+          ! kebalikan boolen  ==>   !true jika dibaca artinya adalah bukan true (berarti kebalikannya true, yaitu false)
+                                    !false jika dibaca artinya adalah bukan false (berarti kebalikannya false, yaitu true)
+
+          ------------------------------
+          var a = 10
+          fmt.Println(a)      output: 10
+
+          a++
+          fmt.Println(a)      output: 11
+          ------------------------------
+
+14. Operator Perbandingan
+      --> Operator perbandingan adalah kemampuan untuk membandingkan antara satu angka dengan angka lain atau satu kondisi dengan kondisi lainnya.
+          
+          > lebih dari
+          < kurang dari
+          >= lebih dari sama dengan
+          <= kurang dari sama dengan
+          == sama dengan
+          != tidak sama dengan
+          
+          - Nilai yang dihasilkan dari perbandingan akan selalu bernilai boolean, yaitu true atau false
+          -------------------------------------------------------------------------------------------------------------
+          cara pakai:
+          1 > 2   output: false atau salah
+          1 < 2   output: true atau benar
+          
+          12 >= 10   output: true, karena 10 lebih dari 12
+          10 >= 10   output: true, karena 10 juga sama dengan 10
+          10 >= 12   output: false, karena 10 tidak lebih dari atau tidak sama dengan 12
+          
+          10 <= 10   output: true, karena 10 juga sama dengan 10
+          12 <= 10   output: false, karena 12 tidak lebih dari 12
+          10 <= 12   output: true, karena 10 memang kurang dari 12
+          
+          var nama1 = "agus"
+          var nama2 = "agus"
+          var apakah_sama = nama1 == nama2
+          fmt.Println(apakah_sama)            output: true, karena namanya sama sama agus dan tidak ada perbedaan huruf
+          
+          var value1 = 10
+          var value2 = 20
+          var value1_dan_value2 = value1 != value2
+          fmt.Println(value1_dan_value2)           output: true, karena value1 (10) tidak sama dengan value2 (20)
+          ---------------------------------------------------------------------------------------------------------------
+          
