@@ -581,3 +581,48 @@ Ikuti instruksi yang diberikan di website golang
             fmt.Println(person)           output: map[age:24 name:zamfes]
           ---------------------------------------------------------------
           
+21. if ekspression dan else ekspression
+      --> if ekspression adalah cara untuk mengendalikan jalannya suatu kode, program atau script.
+          kode, program atau script akan dijalankan jika kondisinya sudah terpenuhi atau true.
+          -----------------------------------------------------------------------
+          var nama = "denny"
+          
+          if nama == "denny" {
+            fmt.Println("benar")
+          }
+          
+          cara bacanya: jika variable nama sama dengan "denny", maka print "benar".
+                        script didalam kurung kurawalnya yang akan dijalankan
+          ------------------------------------------------------------------------
+          Note: Kalau kondisi tidak terpenuhi, maka script yang ada di dalam kurung kurawal, tidak akan dijalankan!
+          
+      --> else ekspression adalah kebalikannya dari if ekspression. Umumnya else ekspression berada setelah if ekspression.
+          cara kerja else ekspression adalah menjalankan kode atau program di dalam kurung kurawal, jika kondisi if tidak terpenuhi.
+          ---------------------------------------------------------------------------
+          var nama = "denny"
+          
+          if nama == "joni" {
+            fmt.Println("benar")
+          } else {
+            fmt.Println("salah")
+          }
+          
+          outputnya: "salah", karena kondisi if ekspression tidak terpenuhi.
+          ---------------------------------------------------------------------------
+          
+      --> else if ekspression memiliki fungsi yang sama seperti if ekspression, ini digunakan jika kalian membutuhkan banyak if
+          dengan kondisi yang berbeda-beda.
+          ---------------------------------------------------------------------------
+          var nama = "denny"
+          
+          if nama == "joni" {
+            fmt.Println("kondisi 1 terpenuhi")
+          } else if nama == "denny" {
+            fmt.Println("kondisi 2 terpenuhi")
+          } else {
+            fmt.Println("kondisi tidak terpenuhi")
+          }
+          
+          output: "kondisi 2 terpenuhi"
+          ---------------------------------------------------------------------------
+          
