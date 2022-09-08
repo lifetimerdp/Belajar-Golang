@@ -647,3 +647,9 @@ Ikuti instruksi yang diberikan di website golang
                fmt.Println("Nama yang dimasukkan benar")
           }
           ---------------------------------------------------------------
+          
+          Note: Variable yang dibuat di dalam if short statement, hanya dapat digunakan dalam
+                lingkup if short statement. Jadi kalau digunakan pada else if, itu bisa!
+
+
+23. 
