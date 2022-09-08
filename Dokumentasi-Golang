@@ -388,10 +388,22 @@ Ikuti instruksi yang diberikan di website golang
           fmt.Println(angka[4])     output: 50
           ---------------------------------------------------------
 
+           Note: jika kalian tidak tau panjang maks data arraynya, kalian
+                 bisa menggunakan ...
+                 
+                 contoh: var angka = [...]int16 {
+                              16,
+                              26,
+                              31,
+                              283,
+                              92,
+                         }
+
 
 17. Beberapa Function
-      - len(nama_array) ==> digunakan untuk mendapatkan "panjang" data dalam array
-      - array[indeks] ==> digunakan untuk mendapatkan data dalam array, sesuai nomor indeksnya (biasanya digunakan bersamaan dengan Prinln)
+      -------------------------------------------------------------------------------------------------------------------------------------
+      - len(nama_array) ========> digunakan untuk mendapatkan "panjang" data dalam array
+      - array[indeks]   ========> digunakan untuk mendapatkan data dalam array, sesuai nomor indeksnya (biasanya digunakan bersamaan dengan Prinln)
       - array[indeks] = value ==> digunakan untuk mengubah data dalam array, sesuai nomor indeksnya
       
       note: "panjang data" berbeda dengan "jumlah indeks dalam array".
@@ -400,6 +412,18 @@ Ikuti instruksi yang diberikan di website golang
             
             contoh: {10, 20, 30} ==> panjang indeks atau jumlah indeksnya adalah 2 (indeks 0 = 10, indeks 1 = 20, indeks 2 = 30)
                                  ==> panjang datanya adalah 3
+      -------------------------------------------------------------------------------------------------------------------------------------
+      Function untuk data slice:
+      - len(slice)  =========================> panjang slice (dihitung dari 1, bukan 0)
+      - cap(slice)  =========================> mendapatkan maks capacity dari data slice
+      - append(slice, data)   ===============> memasukkan data baru di data terakhir dalam slice,
+                                               nantinya akan menghasilkan slice baru.
+                                               
+                                               note: Jika data di induk slice (yaitu array-nya) sudah mentok,
+                                                     maka nanti akan membuat array baru secara otomatis.
+      - make([]TypeData, length, capacity) ==> membuat slice baru
+      - copy(tujuan, source)  ===============> menyalin slice dari sumber atau source ke tujuan
+      -----------------------------------------------------------------------------------------------------------------------------------
 
 
 18. Tipe data slice
@@ -430,9 +454,9 @@ Ikuti instruksi yang diberikan di website golang
                   indeksnya:     0           1         2        3       4       5       6        7           8           9          10          11
           
           ket: - pointer   : 4 atau "April" (asal 4 adalah 4 dari indeks array)
-               - length    : 3 (length diambil dari panjang data slice - 1)
+               - length    : 3 (length diambil dari )
                               4, 5, 6, 7
-                              1  2  3  4 = high (4) - 1
+                              0  1  2  4 = high (4) - 1
                - capacity  : 8 (diambil data pertama slice sampai data terakhir di array)
                                  "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" 
                                    4       5       6        7           8           9          10          11
@@ -441,7 +465,7 @@ Ikuti instruksi yang diberikan di website golang
                         
            Note: - Jika data array diubah, maka semua data slice akan ikut berubah
                  - Jika data slice diubah, maka data dari array ikut berubah dan itu juga akan merubah data di slice lainnya
-                 - Satu buah data array, dapat dijadikan 1 sampai beberapa data slice
+                 - Satu buah data array, dapat dijadikan satu sampai beberapa data slice
           ----------------------------------------------------------------------------------------------------------------------------------------------
           
           
