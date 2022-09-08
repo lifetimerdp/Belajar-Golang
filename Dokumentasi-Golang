@@ -416,13 +416,43 @@ Ikuti instruksi yang diberikan di website golang
       Function untuk data slice:
       - len(slice)  =========================> panjang slice (dihitung dari 1, bukan 0)
       - cap(slice)  =========================> mendapatkan maks capacity dari data slice
-      - append(slice, data)   ===============> memasukkan data baru di data terakhir dalam slice,
-                                               nantinya akan menghasilkan slice baru.
+      - append(slice, data)   ===============> memasukkan data yang baru dibuat ke data terakhir dalam slice.
+                                               otomatis, juga mengubah data array-nya (bukan cuma slice).
+                                               
+                                               Kecuali jika data di arraynya mentok, maka data array dan slice gak berubah!
+                                               karena otomatis membuat array dan slice baru.
                                                
                                                note: Jika data di induk slice (yaitu array-nya) sudah mentok,
-                                                     maka nanti akan membuat array baru secara otomatis.
-      - make([]TypeData, length, capacity) ==> membuat slice baru
-      - copy(tujuan, source)  ===============> menyalin slice dari sumber atau source ke tujuan
+                                                     maka akan membuat array baru dan slice baru.
+                                                     
+      - make([]TypeData, length, capacity) ==> membuat slice baru {Paling saya rekomendasikan jika membuat slice, karena lebih mudah dalam mengaturnya).
+                                               jadi nanti, tinggal di isi slicenya
+                                               ----------------------------------------------------
+                                               Contoh:
+                                               var new_slice = make([]string, 2, 5)
+                                               
+                                               new_slice[0] = "Adit"
+                                               new_slice[1] = "Sopo"
+                                               
+                                               fmt.Println(new_slice)   output: [Adit Sopo]
+                                               ----------------------------------------------------
+      - copy(tujuan, source)  ===============> menyalin slice dari sumber atau source ke tujuan.
+                                               -----------------------------------------------------------------------------------------------
+                                               Contoh:
+                                               var new_slice = make([]string, 2, 5)
+                                               
+                                               new_slice[0] = "Adit"
+                                               new_slice[1] = "Sopo"
+                                               
+                                               fmt.Println(new_slice)   output: [Adit Sopo]
+                                               
+                                               var copySlice = make([]string, len(new_slice), cap(new_slice))  --> panjang dan kapasitasnya
+                                                                                                                   harus sama dengan sourcenya
+                                               copySlice = copy(copySlice, new_slice)
+                                               
+                                               note: alasan gak langsung copySlice = copy(copySlice, new_slice) adalah,
+                                                     karena copySlice harus dijadikan slice baru dan diatur len() dan cap() nya sesuai sourcenya
+                                               -----------------------------------------------------------------------------------------------
       -----------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -439,12 +469,13 @@ Ikuti instruksi yang diberikan di website golang
           - capacity : kapasitas keseluruhan dari data slice, length "tidak boleh" lebih dari capacity
           
       --> Membuat data slice
-          - array[low:high]   : membuat slice dari array, dimulai dari index low sampai index high. Dan data yang dapat diambil adalah indeks high - 1
-                                array[1:10] ==> data yang dapat diambil 1 - 9
-          - array[low:]       : artinya membuat slice dari array, dimulai dari data slice low (diambil dari slice) sampai
-                                data terakhir dari indeks array (diambil dari array)
-          - array[:high]      : artinya membuat slice dari array, dimulai dari indeks 0 array (diambil dari array), sampai
-                                data high - 1 dari slice (diambil dari slice)
+          - array[low:high]   : membuat slice dari array, dimulai dari index low sampai index high.
+                                 - index low ==> dimulai dari 0
+                                 - index high ==> adalah angka sebelum nilai indeks-nya
+          - array[low:]       : artinya membuat slice dari array, dimulai dari data slice low sampai,
+                                data terakhir dari indeks array.
+          - array[:high]      : artinya membuat slice dari array, dimulai dari indeks 0 array, sampai
+                                indeks high (diambil dari slice)
           - array[:]          : membuat slice, dimulai dari indeks 0 array (diambil dari array), sampai indeks terakhir array (diambil dari array)
           
           ----------------------------------------------------------------------------------------------------------------------------------------------
@@ -453,10 +484,18 @@ Ikuti instruksi yang diberikan di website golang
           array[4:7] <==   { "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" }
                   indeksnya:     0           1         2        3       4       5       6        7           8           9          10          11
           
-          ket: - pointer   : 4 atau "April" (asal 4 adalah 4 dari indeks array)
+          ket: - pointer   : 4 atau "Mei" (asal 4 adalah 4 dari indeks array)
                - length    : 3 (length diambil dari )
                               4, 5, 6, 7
-                              0  1  2  4 = high (4) - 1
+                              1  2  3  4 = 3
+                                          Nilai high adalah nilai yang diambil sebelum indeks terakhirnya.
+                                          diatas jika kita hitung, seharusnya panjangnya adalah 4, tetapi
+                                          karena definisi nilai high, maka kita "HARUS" mengambil nilai yang sebelumnya,
+                                          yaitu 3.
+                                          
+                                          Saya kurang tau, alasan pembuat golang membuat sesuatu seperti ini,
+                                          kenapa tidak menyamakan dengan nilai array saja?
+                                           
                - capacity  : 8 (diambil data pertama slice sampai data terakhir di array)
                                  "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" 
                                    4       5       6        7           8           9          10          11
@@ -466,6 +505,20 @@ Ikuti instruksi yang diberikan di website golang
            Note: - Jika data array diubah, maka semua data slice akan ikut berubah
                  - Jika data slice diubah, maka data dari array ikut berubah dan itu juga akan merubah data di slice lainnya
                  - Satu buah data array, dapat dijadikan satu sampai beberapa data slice
+                 - Pelajari nilai high dengan betul!!!
+                   saya sendiri awalnya kesulitan untuk mengetahui secara pastinya, karena ini berbeda dengan nilai indeks dari array
+                   ataupun panjang array itu sendiri.
+                   Kalian bisa mencoba membuat data array, berisi bulan seperti contoh diatas dan coba buat data slice [0:12] dari
+                   data array tersebut. Setelah itu kalian bisa print biasa, print + function len, dan print + function cap dan lihat hasilnya
+                   
+                   contoh:
+                   var slice = arraybulan[0:12]
+                   
+                   fmt.Println(slice)        output: [januari februari maret april mei juni juli agustus september oktober november desember]
+                   fmt.Println(len(slice))   output: 12
+                   fmt.Println(cap(slice))   output: 12
           ----------------------------------------------------------------------------------------------------------------------------------------------
-          
+
+
+19. 
           
