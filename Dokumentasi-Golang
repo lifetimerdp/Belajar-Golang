@@ -559,11 +559,25 @@ Ikuti instruksi yang diberikan di website golang
             person["work"] = "freelancer"
             
             fmt.Println(person)     output: map[age:24 hobby:playing basketball name:zambfes work:freelancer]
-          ---------------------------------------------------------------------------------------------------
+          -------------------------------------------------------------------------------------------------------------
 
 20. Beberapa function untuk tipe data map
-      --> - len(map)                      : 
-          - map[key]                      : 
-          - map[key] = value              : 
-          - make(map[TypeKey]TypeValue)   : 
-          - delete(map, key)              : 
+      --> - len(map)                                        : untuk menghitung panjang data dari map
+          - nama_map[key]                                   : untuk mengambil data dari map menggunakan key
+          - nama_map[key] = value                           : untuk mengubah data dari map
+          - make(map[TypeKey]TypeValue)                     : untuk membuat map baru, nanti tinggal isi datanya seperti
+                                                              make yang ada di slice (ini hanya cara lainnya)
+          - delete(nama_map_yg_ingin_dihapus, key_nya)      : untuk menghapus data map menggunakan key
+          
+          -------------------------------------------------------------------------------------------------------------
+            var person = map[string]string {
+                  "name"   : "zambfes",
+                  "age"    : "24",
+                  "hobby"  : "playing basketball",
+            }
+            
+            fmt.Println(len(person))      output: 3
+            delete(person, "hobby")
+            fmt.Println(person)           output: map[age:24 name:zamfes]
+          ---------------------------------------------------------------
+          
