@@ -402,4 +402,46 @@ Ikuti instruksi yang diberikan di website golang
                                  ==> panjang datanya adalah 3
 
 
-18. 
+18. Tipe data slice
+      --> Tipe data slice adalah potongan dari data array. Slice mirip dengan array, yang membedakan adalah slice ukurannya dapat berubah.
+          Isi data slice adalah sebagian atau seluruh data di array. Sebenarnya, data di slice (dibelakang layar) diambil dari data array.
+          Jadi bisa dibilang, slice adalah beberapa atau seluruh data dari array.
+          (perlu anda tau, data array tidak dapat berubah atau bertambah. Beda dengan
+          data slice ini).
+          
+      --> Terdapat 3 jenis data di tipe data slice:
+          - pointer  : penunjuk data pertama di array para slice
+          - length   : panjang dari data slice
+          - capacity : kapasitas keseluruhan dari data slice, length "tidak boleh" lebih dari capacity
+          
+      --> Membuat data slice
+          - array[low:high]   : membuat slice dari array, dimulai dari index low sampai index high. Dan data yang dapat diambil adalah indeks high - 1
+                                array[1:10] ==> data yang dapat diambil 1 - 9
+          - array[low:]       : artinya membuat slice dari array, dimulai dari data slice low (diambil dari slice) sampai
+                                data terakhir dari indeks array (diambil dari array)
+          - array[:high]      : artinya membuat slice dari array, dimulai dari indeks 0 array (diambil dari array), sampai
+                                data high - 1 dari slice (diambil dari slice)
+          - array[:]          : membuat slice, dimulai dari indeks 0 array (diambil dari array), sampai indeks terakhir array (diambil dari array)
+          
+          ----------------------------------------------------------------------------------------------------------------------------------------------
+          data slice 1
+          
+          array[4:7] <==   { "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" }
+                  indeksnya:     0           1         2        3       4       5       6        7           8           9          10          11
+          
+          ket: - pointer   : 4 atau "April" (asal 4 adalah 4 dari indeks array)
+               - length    : 3 (length diambil dari panjang data slice - 1)
+                              4, 5, 6, 7
+                              1  2  3  4 = high (4) - 1
+               - capacity  : 8 (diambil data pertama slice sampai data terakhir di array)
+                                 "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" 
+                                   4       5       6        7           8           9          10          11
+                                   >-->-->-->-->-->-->-->-->-->-->-->-->-->-->-->-->-->-->-->-->-->-->-->-->-->
+                       [capacity:  1       2       3        4           5           6           7           8]
+                        
+           Note: - Jika data array diubah, maka semua data slice akan ikut berubah
+                 - Jika data slice diubah, maka data dari array ikut berubah dan itu juga akan merubah data di slice lainnya
+                 - Satu buah data array, dapat dijadikan 1 sampai beberapa data slice
+          ----------------------------------------------------------------------------------------------------------------------------------------------
+          
+          
