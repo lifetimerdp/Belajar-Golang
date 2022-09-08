@@ -626,3 +626,24 @@ Ikuti instruksi yang diberikan di website golang
           output: "kondisi 2 terpenuhi"
           ---------------------------------------------------------------------------
           
+22. if short statement
+      --> if short statement adalah cara cepat dalam membuat if ekspression. Cara ini banyak digunakan
+          untuk mengecek suatu kondisi tertentu.
+          kalian bisa membuat variable di yang memiliki if ekspression.
+          --------------------------------------------------------------
+          if check_length := len(name); check_length > 5 {
+               fmt.Println("Nama terlalu panjang")
+          } else {
+               fmt.Println("Nama yang dimasukkan benar")
+          }
+          
+          
+          if ekspression diatas jika dibuat if ekspression biasa, maka akan terlihat seperti
+          var check_length = len(name)
+          
+          if check_length > 5 {
+               fmt.Println("Nama terlalu panjang")
+          } else {
+               fmt.Println("Nama yang dimasukkan benar")
+          }
+          ---------------------------------------------------------------
