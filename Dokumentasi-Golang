@@ -522,5 +522,48 @@ Ikuti instruksi yang diberikan di website golang
           ----------------------------------------------------------------------------------------------------------------------------------------------
 
 
-19. 
+19. Tipe data map
+      --> Tipe data map adalah kumpulan data yang mirip dengan array dan slice, bedanya, tipe data map dapat kita atur tipe data dari indeksnya
+          Misalnya, indeks 0, indeks 1, indeks 2, dan seterusnya, ini adalah tipe data number yang tidak dapat diubah,
+          Namun menggunakan tipe data map, kalian dapat mengubah atau mengatur tipe data dari indeksnya.
           
+          Biasanya di tipe data map disebut key, bukan indeks
+          -----------------------------------------------------------------------------------------------
+          cara buat map:
+                        var person = map[ubah_tipedata_indeks]tipedata_utk_valuenya {
+                              "name"   : "denny",
+                              "age"    : "19",
+                              "hobby"  : "playing football",
+                        }
+          
+          Contoh:
+                  var person = map[string]string {
+                        "name"   : "zambfes",
+                        "age"    : "24",
+                        "hobby"  : "playing basketball",
+                  }
+                  
+                  fmt.Println(person)           output: map[age:24 hobby:playing basketball name:zambfes]
+                  fmt.Println(person["age"])    output: 24
+                  fmt.Println(person["hobby"])  output: playing basketball
+          -----------------------------------------------------------------------------------------------
+      
+      --> Cara menambahkan data ke tipe data map
+          ---------------------------------------------------------------------------------------------------
+            var person = map[string]string {
+                  "name"   : "zambfes",
+                  "age"    : "24",
+                  "hobby"  : "playing basketball",
+            }
+
+            person["work"] = "freelancer"
+            
+            fmt.Println(person)     output: map[age:24 hobby:playing basketball name:zambfes work:freelancer]
+          ---------------------------------------------------------------------------------------------------
+
+20. Beberapa function untuk tipe data map
+      --> - len(map)                      : 
+          - map[key]                      : 
+          - map[key] = value              : 
+          - make(map[TypeKey]TypeValue)   : 
+          - delete(map, key)              : 
