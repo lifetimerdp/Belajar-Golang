@@ -398,7 +398,9 @@ Ikuti instruksi yang diberikan di website golang
                               283,
                               92,
                          }
-
+           Note: Pastikan kotaknya [], ada isinya! boleh angka atau ...
+                 Karena jika kosong, yang kalian buat nantinya bukan Array,
+                 melainkan Slice (Baca no. 18 Tipe data slice)
 
 17. Beberapa Function
       -------------------------------------------------------------------------------------------------------------------------------------
