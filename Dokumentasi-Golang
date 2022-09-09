@@ -873,4 +873,19 @@ Ikuti instruksi yang diberikan di website golang
                      kode ini dijalankan 9
             -------------------------------------------------------------------------------------------------
 
-28. 
+28. Membuat Function sendiri
+      --> Funcion adalah sebuah paket atau package yang berisi vaiable, kode atau script dan function ini
+          juga dapat digunakan berulang-ulang kali.
+          ---------------------------------------
+          func contohFunction() {
+               fmt.Println("contoh function")
+          }
+          ---------------------------------------
+      
+      --> Cara menjalankan function yang sudah dibuat adalah
+          dengan memanggilnya di dalam function main()
+          -------------------------------------------------------------------------------------------------
+          function main() {
+               contohFunction()
+          }
+          -------------------------------------------------------------------------------------------------
