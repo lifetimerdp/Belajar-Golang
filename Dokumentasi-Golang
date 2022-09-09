@@ -581,8 +581,8 @@ Ikuti instruksi yang diberikan di website golang
             fmt.Println(person)           output: map[age:24 name:zamfes]
           ---------------------------------------------------------------
           
-21. if ekspression dan else ekspression
-      --> if ekspression adalah cara untuk mengendalikan jalannya suatu kode, program atau script.
+21. if expression dan else expression
+      --> if expression adalah cara untuk mengendalikan jalannya suatu kode, program atau script.
           kode, program atau script akan dijalankan jika kondisinya sudah terpenuhi atau true.
           -----------------------------------------------------------------------
           var nama = "denny"
@@ -596,8 +596,8 @@ Ikuti instruksi yang diberikan di website golang
           ------------------------------------------------------------------------
           Note: Kalau kondisi tidak terpenuhi, maka script yang ada di dalam kurung kurawal, tidak akan dijalankan!
           
-      --> else ekspression adalah kebalikannya dari if ekspression. Umumnya else ekspression berada setelah if ekspression.
-          cara kerja else ekspression adalah menjalankan kode atau program di dalam kurung kurawal, jika kondisi if tidak terpenuhi.
+      --> else expression adalah kebalikannya dari if expression. Umumnya else expression berada setelah if expression.
+          cara kerja else expression adalah menjalankan kode atau program di dalam kurung kurawal, jika kondisi if tidak terpenuhi.
           ---------------------------------------------------------------------------
           var nama = "denny"
           
@@ -607,10 +607,10 @@ Ikuti instruksi yang diberikan di website golang
             fmt.Println("salah")
           }
           
-          outputnya: "salah", karena kondisi if ekspression tidak terpenuhi.
+          outputnya: "salah", karena kondisi if expression tidak terpenuhi.
           ---------------------------------------------------------------------------
           
-      --> else if ekspression memiliki fungsi yang sama seperti if ekspression, ini digunakan jika kalian membutuhkan banyak if
+      --> else if expression memiliki fungsi yang sama seperti if expression, ini digunakan jika kalian membutuhkan banyak if
           dengan kondisi yang berbeda-beda.
           ---------------------------------------------------------------------------
           var nama = "denny"
@@ -627,9 +627,9 @@ Ikuti instruksi yang diberikan di website golang
           ---------------------------------------------------------------------------
           
 22. if short statement
-      --> if short statement adalah cara cepat dalam membuat if ekspression. Cara ini banyak digunakan
+      --> if short statement adalah cara cepat dalam membuat if expression. Cara ini banyak digunakan
           untuk mengecek suatu kondisi tertentu.
-          kalian bisa membuat variable di yang memiliki if ekspression.
+          kalian bisa membuat variable di yang memiliki if expression.
           --------------------------------------------------------------
           if check_length := len(name); check_length > 5 {
                fmt.Println("Nama terlalu panjang")
@@ -638,7 +638,7 @@ Ikuti instruksi yang diberikan di website golang
           }
           
           
-          if ekspression diatas jika dibuat if ekspression biasa, maka akan terlihat seperti
+          if expression diatas jika dibuat if expression biasa, maka akan terlihat seperti
           var check_length = len(name)
           
           if check_length > 5 {
@@ -652,4 +652,140 @@ Ikuti instruksi yang diberikan di website golang
                 lingkup if short statement. Jadi kalau digunakan pada else if, itu bisa!
 
 
-23. 
+23. Switch expression
+      --> Switch expression adalah versi sederhana dari if expression.
+          Switch expression digunakan untuk melakukan pengecekan sederhana dari suatu variable.
+          Kalian bahkan hanya perlu satu kurung kurawal dan bisa melakukan banyak pengecekan
+          pada satu variable dengan kondisi dan outpun yang dihasilkan berbeda-beda.
+          ------------------------------------------------------------------------------------
+          var name = "wijayanto"
+          
+          switch name {
+          case "agus":
+            fmt.Println("namanya agus")
+          case "wijayanto":
+            fmt.Println("namanya wijayanto")
+          default:
+            fmt.Println("siapakah namanya?")
+          }
+          
+          output: "namanya wijayanto"
+          
+          Note: switch cocok untuk melakukan pengecekan terhadap satu variable dengan kondisi yang berbeda-beda
+          
+          
+          ket:
+               - switch untuk melakukan pengecekan terhadap variablenya
+               - case digunakan untuk mengecek kondisi dari variablenya,
+                 case 1, case 2, case 3, dst ==> artinya kondisi 1, kondisi 2,
+                 kondisi 3.
+               - default adalah seperti else pada if expression
+          ------------------------------------------------------------------------------------
+      --> Selain cara diatas, switch expression juga bisa digunakan kosong tanpa variable diawal,
+          dan tanpa terikat variable tertentu (kalian bisa memasukkan variable lainnya juga).
+          Keuntungan menggunakan cara ini, adalah kalian bisa memasukkan banyak kondisi berbeda,
+          terutama jika data yang ingin dicek adalah data tipe number (integer, atau float point)
+          ------------------------------------------------------------------------------------
+          var angka = 5 * 2 + 1
+          
+          switch {
+          case angka == 10:
+            fmt.Println("angka = 10")
+          case angka == 11:
+            fmt.Println("angka = 11")
+          case angka >= 12:
+            fmt.Println("angka lebih besar dari 12 atau sama dengan 12")
+          case angka <= 9:
+            fmt.Println("angka lebih kecil dari 9 atau sama dengan 9")
+          default:
+            fmt.Println("data bukan angka")
+          }
+          
+          output: "angka = 11"
+          ------------------------------------------------------------------------------------
+          
+          
+24. Switch short statement (lewati, karena sama saja dengan if short statement. Bahkan lebih pendek dan enak if short statement!!!)
+
+25. for loop
+      --> for loop adalah perulangan. Selama kondisi di for loop terpenuhi, maka kode didalamnya akanselalu berjalan.
+      ---------------------------------------------------------------------
+      var nama = "agus witoyo"
+      var panjang_nama = len(nama)
+      
+      for panjang_nama > 10 {
+         fmt.Println("nama terlalu panjang!")
+      }
+      
+      output:  nama terlalu panjang!
+               nama terlalu panjang!
+               nama terlalu panjang!
+               dan seterusnya... (tidak akan berhenti, sampai script atau program dihentikan)
+               
+      Note: Pastikan kalian memasukkan kondisi yang terdapat batas pengulangan, agar kode tidak selalu dijalankan terus-menerus alias tanpa henti
+            misalnya, seperti kode dibawah ini
+            ---------------------------------------------------------------------
+            var angka = 1
+            
+            for angka <= 10 {
+               fmt.Println("angkanya adalah", angka)
+               angka++
+            }
+            
+            output:  angkanya adalah 1
+                     angkanya adalah 2
+                     angkanya adalah 3
+                     angkanya adalah 4
+                     angkanya adalah 5
+                     angkanya adalah 6
+                     angkanya adalah 7
+                     angkanya adalah 8
+                     angkanya adalah 9
+                     angkanya adalah 10
+           ---------------------------------------------------------------------
+           
+16. for statement
+      --> for statement di golang mirip dengan for statement di javascript. Nanti kalian dapat melihat persamaannya,
+          terdapat 2 statement di for statement
+          - init statement: statement yang di jalankan sebelum for loop di jalankan
+          - post statement: statement yang d jalankan di setiap akhir perulangan
+          
+          ------------------------------------------------------------------------
+          visualisasi statement:
+          for init_statement := 1; kondisinya; post_statement {
+               // kode atau script kalian
+          }
+          
+          contoh penulisan:
+          
+          for variable;kondisi;increment {
+               // kode yang ingin dijalankan
+          }
+          
+          praktek:
+          
+          for angka := 1; angka <= 20; angka++ {
+               fmt.Println("angka sekarang:", angka)
+          }
+          
+          output: angka sekarang: 1
+                  angka sekarang: 2
+                  angka sekarang: 3
+                  angka sekarang: 4
+                  angka sekarang: 5
+                  angka sekarang: 6
+                  angka sekarang: 7
+                  angka sekarang: 8
+                  angka sekarang: 9
+                  angka sekarang: 10
+                  angka sekarang: 11
+                  angka sekarang: 12
+                  angka sekarang: 13
+                  angka sekarang: 14
+                  angka sekarang: 15
+                  angka sekarang: 16
+                  angka sekarang: 17
+                  angka sekarang: 18
+                  angka sekarang: 19
+                  angka sekarang: 20
+          ------------------------------------------------------------------------
