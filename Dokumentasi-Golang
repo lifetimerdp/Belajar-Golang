@@ -758,7 +758,7 @@ Ikuti instruksi yang diberikan di website golang
                      angkanya adalah 10
            ---------------------------------------------------------------------
            
-16. for statement
+26. for statement
       --> for statement di golang mirip dengan for statement di javascript. Nanti kalian dapat melihat persamaannya,
           terdapat 2 statement di for statement
           - init statement: statement yang di jalankan sebelum for loop di jalankan
@@ -803,3 +803,74 @@ Ikuti instruksi yang diberikan di website golang
                   angka sekarang: 19
                   angka sekarang: 20
           ------------------------------------------------------------------------
+          Contoh lain:
+          
+          var data = []string {"denny", "budi", "agus", "anton", "eko"}
+          
+          for i := 0; i < len(data); i++ {
+            fmt.Println(i, data[i])
+          }
+          
+          output: 0 denny
+                  1 budi
+                  2 agus
+                  3 anton
+                  4 eko
+          -------------------------------------------------------------------------
+
+      --> for range adalah cara cepat dan khusus untuk menampilkan data yang terdapat di array, slice, atau map.
+          kode dibawah ini adalah cara cepat dari contoh sebelumnya. (Hasilnya sama saja)
+          -----------------------------------------------------------------------------------------------------------------------
+          var data = []string {"denny", "budi", "agus", "anton", "eko"}
+          
+          for i, value := range data {                // gak pake ; tapi pake koma ,
+            fmt.Println("indeks ke", i, "=", value)
+          }
+          
+          output: indeks ke 0 = denny
+                  indeks ke 1 = budi
+                  indeks ke 2 = agus
+                  indeks ke 3 = anton
+                  indeks ke 4 = eko
+                  
+          kalau kalian tidak ingin menampilkan indeksnya, ganti bagian i dengan _
+          karena kalau tidak dipakai i nya, nanti error (Di golang kalau ada variable tidak dipakai, maka akan error saat di run)
+          -----------------------------------------------------------------------------------------------------------------------
+          
+27. Break dan Continue
+      --> Apa itu break dan continue?
+          - break digunakan untuk menghentikan perulangan atau for loop. Setelah berhenti, maka kode di bawahnya yang dalam tanda kutip
+            "masih di dalam lingkup for loop" tidak akan dijalankan.
+            -------------------------------------------------------------------------------------------------
+            for i := 0; i < 10; i++ {
+               if i == 5 {
+                  break             ==> stop sampai break, dan Println tidak akan dieksekusi atau di jalankan
+               }
+               
+               fmt.Println("kode ini dijalankan", i)
+            }
+            
+            output: kode ini dijalankan 1
+                    kode ini dijalankan 2
+                    kode ini dijalankan 3
+                    kode ini dijalankan 4
+            -------------------------------------------------------------------------------------------------
+        --> Continue sedikit berbeda. Jika menemukan continue, maka kode dibawahnya tidak akan dijalankan. Tetapi,
+            melanjutkan ke post statement (increment++) dan mengulangi dari awal. Jadi, perulangan tidak sepenuhnya dihentikan!
+            -------------------------------------------------------------------------------------------------
+            for i := 0; i < 10; i++ {
+               if i % 2 == 0 {
+                  continue          ==> stop sampai continue, kode println tidak dijalankan ATAU di skip. Tetapi kode
+               }                        i++ dijalankan (karena berada diatas continue) dan mengulangi looping lagi
+               
+               fmt.Println("kode ini dijalankan", i)
+            }
+            
+            output:  kode ini dijalankan 1
+                     kode ini dijalankan 3
+                     kode ini dijalankan 5
+                     kode ini dijalankan 7
+                     kode ini dijalankan 9
+            -------------------------------------------------------------------------------------------------
+
+28. 
