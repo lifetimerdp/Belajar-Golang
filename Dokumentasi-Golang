@@ -400,7 +400,7 @@ Ikuti instruksi yang diberikan di website golang
                          }
            Note: Pastikan kotaknya [], ada isinya! boleh angka atau ...
                  Karena jika kosong, yang kalian buat nantinya bukan Array,
-                 melainkan Slice (Baca no. 18 Tipe data slice)
+                 melainkan data bertipe Slice (Baca no. 18 Tipe data slice)
 
 17. Beberapa Function
       -------------------------------------------------------------------------------------------------------------------------------------
@@ -427,7 +427,7 @@ Ikuti instruksi yang diberikan di website golang
                                                note: Jika data di induk slice (yaitu array-nya) sudah mentok,
                                                      maka akan membuat array baru dan slice baru.
                                                      
-      - make([]TypeData, length, capacity) ==> membuat slice baru {Paling saya rekomendasikan jika membuat slice, karena lebih mudah dalam mengaturnya).
+      - make([]TypeData, length, capacity) ==> membuat slice baru.
                                                jadi nanti, tinggal di isi slicenya
                                                ----------------------------------------------------
                                                Contoh:
@@ -520,7 +520,21 @@ Ikuti instruksi yang diberikan di website golang
                    fmt.Println(len(slice))   output: 12
                    fmt.Println(cap(slice))   output: 12
           ----------------------------------------------------------------------------------------------------------------------------------------------
+          Rekomendasi: Biar cepat, gunakan cara dibawah ini untuk membuat data slice.
+                       Caranya mirip seperti membuat data tipe Array, bedanya hanya di bagian kurung kotak []
+                       -------------------------------------------------
+                       Cara Buat:
 
+                       var slice = []string {
+                         "apel",
+                         "anggur",
+                         "pisang",
+                       }
+                       
+                       fmt.Println(slice)    output: [apel anggur pisang]
+                       --------------------------------------------------
+         
+         
 
 19. Tipe data map
       --> Tipe data map adalah kumpulan data yang mirip dengan array dan slice, bedanya, tipe data map dapat kita atur tipe data dari indeksnya
