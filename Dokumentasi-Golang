@@ -911,4 +911,36 @@ Ikuti instruksi yang diberikan di website golang
           output: Hello Agus Witoyo
           ---------------------------------------------------------------
           
-30. 
+30. Function return value
+      --> function return value adalah sebuah function yang memiliki kemampuan mengembalikan data.
+          caranya adalah dengan menggunakan "return" didalam functionnya, dan pastikan menaruhnya di
+          baris paling akhir dari function (karena kode yang terdapat di bawah "return" tidak akan dieksekusi!)
+          --------------------------------------------------------------------------
+          func example(name string) string {
+             contoh := "halo " + name
+             return contoh
+          }
+
+          func main() {
+             fmt.Println(example("test"))
+          }
+          
+          output: halo test
+          --------------------------------------------------------------------------
+          contoh lagi:
+          func example(name string) string {
+             if name == "" {
+               return "isi nama dengan benar!"
+             } else {
+               return "halo " + name
+             }
+          }
+
+          func main() {
+             fmt.Println(example(""))
+          }
+          
+          output: isi nama dengan benar!
+          --------------------------------------------------------------------------
+
+31. 
