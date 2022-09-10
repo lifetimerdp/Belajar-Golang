@@ -999,4 +999,36 @@ Ikuti instruksi yang diberikan di website golang
           Note: Perlu anda ketahui, diatas hanya contoh semata, penggunaannya kemungkinan untuk sesuatu yang lebih berguna dan kompleks
           --------------------------------------------------------------------------------------
 
-33. 
+33. Variadic function atau variable argument
+      --> Variadic function adalah sebuah kemampuan dari parameter terakhir di dalam sebuah function.
+          Kemampuan tersebut adalah dapat menyimpan data lebih dari satu input (semacam array) dan
+          tanpa harus membuatnya terlebih dahulu.
+          -----------------------------------------------------------------------------------------
+          func sum(numbers ...int8) int8 {
+               total := 0
+               for _, number := numbers range {
+                  total += number
+               }
+               return total
+          }
+          
+          func main() {
+               total := sum(10, 20, 30)
+               fmt.Println(total)
+          }
+          
+          output: 60
+          -----------------------------------------------------------------------------------------
+      --> Kalian bahkan bisa menggunakan data slice yang sudah ada, menjadi isi dari variadic function atau
+          variable / parameter argument
+          ---------------------------------------------------------------------------------
+          func main() {
+            slice := []int {55, 21, 3}
+            total := sum(slice...)
+            fmt.Println(total)
+          }
+          
+          output: 79
+          ---------------------------------------------------------------------------------
+          
+34. 
