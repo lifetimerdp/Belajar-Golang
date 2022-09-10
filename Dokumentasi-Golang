@@ -891,4 +891,24 @@ Ikuti instruksi yang diberikan di website golang
           -------------------------------------------------------------------------------------------------
 
 29. Function parameter
-      --> 
+      --> function parameter adalah data yang berasal dari luar function.
+          ---------------------------------------------------------------
+          contoh function dengan parameter:
+          func contohFunction(parameter typeData) {
+               // kode atau program kalian
+          }
+          
+          contoh function dengan parameter dan contoh penggunaan: (parameter bisa lebih dari 1)
+          func sayHello(firstname string, lastname string) {
+               fmt.Println("Hello", firstname, lastname)
+          }
+          
+          contoh penggunaaan func:
+          func main() {
+               sayHello("Agus", "Witoyo")
+          }
+          
+          output: Hello Agus Witoyo
+          ---------------------------------------------------------------
+          
+30. 
