@@ -973,4 +973,30 @@ Ikuti instruksi yang diberikan di website golang
           --------------------------------------------------------------------------------------
 
 32. Named return value
-      --> 
+      --> Ini sebenarnya adalah multiple return value, tetapi dengan penamaan dan variable di bagian returnnya
+          --------------------------------------------------------------------------------------
+          func person() (name string, age int8, cmHeight float32, hobby string) {      // kalau tipe datanya sama semua, cukup
+               name = "agus"                                                              variable, variable, variable typeData (jika kalian 
+               age = 27                                                                   menggunakan 3 variable, boleh satu, dua, dst).
+               cmHeight = 183.2
+               hobby = "fishing"
+               return
+          }
+          
+          func main() {
+               name, age, cmHeight, hobby := person()    // nama variable gak harus sama, bisa a, b, c, dll
+               fmt.Println("nama = ", name)
+               fmt.Println("umur = "age)
+               fmt.Println("tinggi badan = "cmHeight)
+               fmt.Println("hobi = "hobby)
+          }
+          
+          output: nama = agus
+                  umur = 27
+                  tinggi badan = 183.2
+                  hobi = fishing
+          
+          Note: Perlu anda ketahui, diatas hanya contoh semata, penggunaannya kemungkinan untuk sesuatu yang lebih berguna dan kompleks
+          --------------------------------------------------------------------------------------
+
+33. 
