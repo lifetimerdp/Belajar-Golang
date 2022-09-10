@@ -1020,7 +1020,7 @@ Ikuti instruksi yang diberikan di website golang
           output: 60
           -----------------------------------------------------------------------------------------
       --> Kalian bahkan bisa menggunakan data slice yang sudah ada, menjadi isi dari variadic function atau
-          variable / parameter argument
+          variable / parameter argument dari function
           ---------------------------------------------------------------------------------
           func main() {
             slice := []int {55, 21, 3}
