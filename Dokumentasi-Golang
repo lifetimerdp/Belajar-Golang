@@ -1065,7 +1065,7 @@ Ikuti instruksi yang diberikan di website golang
           }
           
           func spamFilter(name string) string {
-               if == "Babi" {
+               if name == "Babi" {
                   return "..."
                } else {
                   return name
@@ -1079,12 +1079,35 @@ Ikuti instruksi yang diberikan di website golang
           }
           
           Note: Pastikan parameter function yang dimasukkan menggunakan tipe data yang sama agar tidak error
-          
-          Kelebihan menggunakan parameter sebagai function, dibandingkan membuat if yang banyak didalam function
-          adalah jika kalian membuat if yang banyak didalam functionnya, kalian memang bisa melakukan hal yang
-          sama dengan contoh diatas. Tetapi, dengan menggunakan function, kalian bisa menggunakan berbagai function
-          dengan fitur yang berbeda dan dapat dikombinasikan dengan function lainnya,selama memiliki tipe data
-          yang sesuai. Misalnya sayHello("Kurniadi", spamFilter), sayHello("Andi", perkenalanFilter) dan kombinasi lainnya.
-          --------------------------------------------------------------------------------------------------------
+          ----------------------------------------------------------------------------------
 
-36. 
+36. Anonymus function
+      --> anonymus function adalah function tanpa nama. Ini sering digunakan untuk menampilkan parameter sebagai function.
+          ----------------------------------------------------------------------------------
+          func registerUser(name string, blocked func(string) bool) {
+               if blocked(name) == true {
+                  fmt.Println("You are blocked", name)   // artinya kalau parameter blacklistnya true, maka yang true di jalankan
+               } else {
+                  fmt.Println("Welcome", name)  // kalau namanya tidak di blacklist, maka ini yang di jalankan
+               }
+          }
+          
+          // buat dulu anonymus function buat nanti ngisi parameter blacklist
+          func main() {
+             blacklist := func(name string) bool {
+                  return name == "Babi"
+             }
+
+             registerUser("Andi", blacklist)
+             registerUser("Babi", blacklist)
+          }
+          
+          output: Welcome Andi
+                  You are blocked Babi
+                  
+          Note: anonymus function kebanyakan digunakan untuk mengisi parameter yang berbentuk sebuah function.
+                karena kalian tidak perlu menambahkan nama ke anonymus function, dan jika nanti ingin digunakan lagi,
+                kalian dapat menyimpannya ke sebuah variable
+          ----------------------------------------------------------------------------------
+
+37. 
