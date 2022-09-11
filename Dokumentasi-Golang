@@ -1094,12 +1094,19 @@ Ikuti instruksi yang diberikan di website golang
           
           // buat dulu anonymus function buat nanti ngisi parameter blacklist
           func main() {
-             blacklist := func(name string) bool {
-                  return name == "Babi"
-             }
+               blacklist := func(name string) bool {
+                  if name == "babi" {
+                     return true
+                  } else if name == "anjing" {
+                     return true
+                  } else {
+                     return false
+                  }
+               }
 
-             registerUser("Andi", blacklist)
-             registerUser("Babi", blacklist)
+               registerUser("andi", blacklist)
+               registerUser("babi", blacklist)     // parameter 2: jika returnnya adalah true, maka parameter blocked yang di function
+               registerUser("anjing", blacklist)      registerUser akan dijalankan. Jika false maka yang else akan dijalankan.
           }
           
           output: Welcome Andi
