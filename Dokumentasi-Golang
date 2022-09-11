@@ -1031,4 +1031,43 @@ Ikuti instruksi yang diberikan di website golang
           output: 79
           ---------------------------------------------------------------------------------
           
-34. 
+34. Function value
+      --> function value adalah sebuah function yang disimpan di dalam sebuah variable dan variable yang menyimpan function tersebut
+          akan memiliki kemampuan yang sama seperti functionnya.
+         -----------------------------------------------------------------------------------
+          func test(name string) string {
+             return "halo " + name
+          }
+          
+         func main() {
+             var publicTest = test
+             fmt.Println(publicTest("agus"))
+         }
+          
+         output: halo agus 
+         -----------------------------------------------------------------------------------
+
+35. Function sebagai parameter
+      --> Sebenarnya, kalian juga dapat menggunakan function di sebuah parameter pada function.
+          Ini sangat berguna untuk
+          ----------------------------------------------------------------------------------
+          contoh: Dibawah ini adalah 2 function dengan fungsi yang berbeda, func sayHello digunakan
+                  untuk mengatakan halo ke nama yang di input. Sedangkan func spamFilter digunakan
+                  untuk menyaring kata-kata yang dianggap spam atau kotor.
+                  
+          func sayHello(name string, filter func(string) string) {
+               nameFiltered := filter(name)
+               fmt.Println("halo", nameFiltered)
+          }
+          
+          func spamFilter(name string) string {
+               if == "Babi" {
+                  return "..."
+               } else {
+                  return name
+               }
+          }
+          
+          contoh penggunaan:
+          test := 
+          ----------------------------------------------------------------------------------
