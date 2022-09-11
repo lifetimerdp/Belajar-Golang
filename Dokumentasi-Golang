@@ -1050,6 +1050,7 @@ Ikuti instruksi yang diberikan di website golang
 35. Function sebagai parameter
       --> Sebenarnya, kalian juga dapat menggunakan function di sebuah parameter pada function.
           Ini sangat berguna untuk memasukkan atau mengkombinasikan satu filter dengan filter lainnya.
+          
           Misalnya: sayHello mempunyai dua parameter, 1. parameter string dan 2. parameter function string.
                     Kalian dapat memasukkan function lain (contoh dibawah adalah func spamFilter) ke
                     dalam function sayHello. Lihat lengkapnya dibawah
@@ -1076,6 +1077,8 @@ Ikuti instruksi yang diberikan di website golang
                sayHello("andi", spamFilter)     output: halo andi
                sayHello("Babi", spamFilter)     output: halo ...
           }
+          
+          Note: Pastikan parameter function yang dimasukkan menggunakan tipe data yang sama agar tidak error
           ----------------------------------------------------------------------------------
 
 36. 
