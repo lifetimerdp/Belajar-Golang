@@ -1135,4 +1135,15 @@ Ikuti instruksi yang diberikan di website golang
       ---------------------------------------------------------------------------------------
 
 38. Defer, Panic, Recover
-      --> 
+      --> defer adalah function yang dipanggil setelah function selesai dijalankan.
+          -------------------------------------------------------------------------
+          func success() {
+               fmt.Println("Program success")
+          }
+          
+          func increments10kali(number int) int {
+               for total := 1;total <= number * 10;total++ {
+                  return total
+               }
+          }
+          -------------------------------------------------------------------------
