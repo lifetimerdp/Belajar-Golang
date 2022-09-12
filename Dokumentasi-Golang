@@ -1117,4 +1117,22 @@ Ikuti instruksi yang diberikan di website golang
                 kalian dapat menyimpannya ke sebuah variable
           ----------------------------------------------------------------------------------
 
-37. 
+37. Recursive function
+      --> recursive function adalah function yang menggunakan function dirinya sendiri.
+      ---------------------------------------------------------------------------------------
+      func factorialNumbers(number int) int {
+            if number == 1 {
+               return 1
+            } else {
+               return number * factorialNumbers(number-1)
+            }
+      }
+      
+      func main() {
+         var data1 = factorialNumbers(5)
+         fmt.Println(data1)
+      }
+      ---------------------------------------------------------------------------------------
+
+38. Defer, Panic, Recover
+      --> 
