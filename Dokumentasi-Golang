@@ -1136,14 +1136,103 @@ Ikuti instruksi yang diberikan di website golang
 
 38. Defer, Panic, Recover
       --> defer adalah function yang dipanggil setelah function selesai dijalankan.
+          Ini sangat berguna untuk mengatasi function yang tidak terpanggil karena error atau kendala lainnya.
+          Menggunakan defer, kalian akan tetap dapat menjalankan function diakhir, walaupun terjadi error sekalipun.
           -------------------------------------------------------------------------
           func success() {
                fmt.Println("Program success")
           }
           
-          func increments10kali(number int) int {
-               for total := 1;total <= number * 10;total++ {
-                  return total
+          func increments(number int) {
+               defer success()
+               for total := 1;total <= number;total++ {
+                  fmt.Println(total)
                }
           }
+          
+          func main() {
+               increments(10)
+          }
+          
+          output: 1
+                  2
+                  3
+                  4
+                  5
+                  6
+                  7
+                  8
+                  9
+                  10
+                  Program success
+          
           -------------------------------------------------------------------------
+      --> Panic adalah cara untuk memberitahu kalau terjadi error tertentu. Pesan errornya
+          juga dapat kita atur sendiri.
+          -------------------------------------------------------------------------
+          func endProgram() {
+               fmt.Println("selesai")
+          }
+          
+          func hello(checkError bool) {
+               defer endProgram()
+               if checkError == true {
+                  panic("terjadi error")
+               } else {
+                  fmt.Println("program berjalan")
+               }
+          }
+          
+          func main() {
+               hello(true)
+          }
+          
+          output: testing
+                  panic: terjadi error
+
+                  goroutine 1 [running]:
+                  main.hello(0xa0?)
+                          /home/halo-linux.go:12 +0xa5
+                  main.main()
+                          /home//halo-linux.go:19 +0x1e
+                  exit status 2
+          -------------------------------------------------------------------------
+      --> Recovery adalah cara untuk menangkap pesan error dari panic(), tanpa harus
+          mengeluarkan pesan error yang panjang. Jadi, lebih dapat mengontrol dan
+          menyesuaikan pesan error saat error tersebut terjadi.
+          
+          note: pastikan membuat recover() sebelum panic() atau dengan menggunakan
+                defer (karena defer tetap akan dijalankan walaupun terjadi error)
+          -------------------------------------------------------------------------
+          func endProgram() {
+             errorMessage := recover()
+             if errorMessage != nil {                 // nil sama seperti null, artinya kosong atau tidak ada.
+                fmt.Println("pesan:", errorMessage)      kode nil disamping artinya kalau tidak nil atau tidak kosong (alias terjadi
+             } else {                                    error, karena errorMsg tugasnya menangkap error) maka jalankan...
+                fmt.Println("selesai")
+             }
+          }
+          
+          func hello(checkError bool) {
+               defer endProgram()
+               if checkError == true {
+                  panic("telah terjadi error")
+               } else {
+                  fmt.Println("program berjalan")
+               }
+          }
+          
+          func main() {
+               hello(true)
+               hello(false)
+          }
+          
+          output true:
+                        pesan: telah terjadi error
+          
+          output false:
+                        program berjalan
+                        selesai
+          -------------------------------------------------------------------------
+
+39. 
