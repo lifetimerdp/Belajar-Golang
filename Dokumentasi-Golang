@@ -1255,10 +1255,46 @@ Ikuti instruksi yang diberikan di website golang
 
 40. Struct
       --> struct adalah template atau struktur data yang digunakan untuk menggabungkan beberapa tipe data yang berbeda menjadi
-          satu kesatuan.
+          satu kesatuan. Struct tidak bisa digunakan secara langsung, namun kita dapat membuat data atau object dari struct
+          yang kita buat. Kalian bisa mengaggap struct seperti sebuah tipe data baru yang telah kita buat.
           ---------------------------------------------------------------------------
+      --> Buat data struct:
+          
           type DataPerson struct {
             Name, Address string
             Age           int
           }
+          ----------------------------------------------------------------------------
+      --> Cara pakai struct:
+          ----------------------------------------------------------------------------
+          func main() {
+               // buat variable dari struct yang sudah dibuat
+               var agus DataPerson
+               
+               // Cara isi valuenya
+               agus.Name = "agus witoyo"
+               agus.Address = "Indonesia"
+               agus.Age = 24
+               
+               fmt.Println(agus.Name)
+               fmt.Println(agus.Address)
+               fmt.Println(agus.Age)
+               fmt.Println(agus)
+          }
+          
+          output: agus witoyo
+                  Indonesia
+                  24
+                  {agus witoyo Indonesia 24}
           ---------------------------------------------------------------------------
+      --> Cara cepat isi data struct
+          ----------------------------------------------------------------------------
+          var agus = DataPerson {
+               Name: "agus witoyo",
+               Address: "Indonesia",
+               Age: 24,
+          }
+          ----------------------------------------------------------------------------
+
+41. Struct Method
+      --> 
