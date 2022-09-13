@@ -1243,4 +1243,14 @@ Ikuti instruksi yang diberikan di website golang
           -------------------------------------------------------------------------
 
 39. Komentar
-      --> 
+      --> Komentar adalah bagian kode yang tidak akan di eksekusi atau dijalankan.
+          Umumnya ini digunakan untuk memberikan keterangan ke kode (function, variable, dll) yang sulit dimengerti,
+          atau sedakar untuk menambahkan sedikit penjelasan untuk kode yang ditulis.
+          --------------------------------------------------------------------------
+          1. Membuat komentar pendek satu baris
+             - Gunakan // di bagian paling depan dari kode untuk membuat komentar pendek
+          2. Membuat komentar massal (untuk banyak baris)
+             - Gunakan /** komentar anda */
+          --------------------------------------------------------------------------
+
+40. 
