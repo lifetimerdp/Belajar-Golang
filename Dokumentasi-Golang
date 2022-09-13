@@ -1205,10 +1205,10 @@ Ikuti instruksi yang diberikan di website golang
           yang error).
           
           Misal: sayHello()
-                 fmt.Println("ini kode dibawahnya")   // ini akan tetap dijalankan, Jika kalian menggunakan recover()
-                                                         untuk menangkap pesan error dari panic()
+                 fmt.Println("ini kode dibawahnya")   // kode ini akan tetap dijalankan jika kalian menggunakan recover()
+                                                         untuk menangkap pesan error yang ditangkap panic()
           
-          note: pastikan membuat recover() sebelum panic() atau dengan menggunakan
+          Note: pastikan membuat recover() sebelum panic() atau disarankan menggunakan
                 defer (karena defer tetap akan dijalankan walaupun terjadi error)
           -------------------------------------------------------------------------
           func endProgram() {
