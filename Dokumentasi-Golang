@@ -1253,4 +1253,12 @@ Ikuti instruksi yang diberikan di website golang
              - Gunakan /** komentar anda */
           --------------------------------------------------------------------------
 
-40. 
+40. Struct
+      --> struct adalah template atau struktur data yang digunakan untuk menggabungkan beberapa tipe data yang berbeda menjadi
+          satu kesatuan.
+          ---------------------------------------------------------------------------
+          type DataPerson struct {
+            Name, Address string
+            Age           int
+          }
+          ---------------------------------------------------------------------------
