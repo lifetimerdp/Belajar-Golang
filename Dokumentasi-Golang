@@ -1201,6 +1201,13 @@ Ikuti instruksi yang diberikan di website golang
           mengeluarkan pesan error yang panjang. Jadi, lebih dapat mengontrol dan
           menyesuaikan pesan error saat error tersebut terjadi.
           
+          Selain itu, ini juga dapat mencegah kode kode dibawahnya terhenti (dibawah function
+          yang error).
+          
+          Misal: sayHello()
+                 fmt.Println("ini kode dibawahnya")   // ini akan tetap dijalankan, Jika kalian menggunakan recover()
+                                                         untuk menangkap pesan error dari panic()
+          
           note: pastikan membuat recover() sebelum panic() atau dengan menggunakan
                 defer (karena defer tetap akan dijalankan walaupun terjadi error)
           -------------------------------------------------------------------------
