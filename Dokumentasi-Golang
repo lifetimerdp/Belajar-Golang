@@ -1377,7 +1377,7 @@ Ikuti instruksi yang diberikan di website golang
           ------------------------------------------------------------------------------------------------------------------------
 
 43. Interface kosong
-      --> Interface kosong adalah sebuah interface yang dapat berisi data tipe apapun yang ada di golang. Mau itu string,
+      --> Interface kosong adalah sebuah interface yang dapat berisi tipe data apapun yang ada di golang. Mau itu string,
           int, floating point, slice, array, struct, dll.
           
           Beberapa contoh yang menggunakan interface kosong:   - fmt.Println()
@@ -1386,3 +1386,32 @@ Ikuti instruksi yang diberikan di website golang
                                                                - dan lain-lain
                                                                
           -------------------------------------------------------------------------------------------
+      --> Cara buat interface kosong
+          
+          func noneInt(param interface{}) interface{} {     // function ini memiliki parameter dan
+               if param == 1 {                                 return valuenya berupa interface kosong
+                  return 1    // integer
+               } else if param == 2 {
+                  return true // boolean
+               } else {
+                  return "ini else"    // string
+               }
+          }
+          
+          func main() {
+             fmt.Println(noneInt(1))
+             fmt.Println(noneInt(2))
+             fmt.Println(noneInt(3))
+          }
+          
+          output: 1
+                  true
+                  ini else
+                  
+      --> Cara nyimpan function yang menggunakan interface kosong
+          
+          var test interface{} = noneInt(1)
+          fmt.Println(test)
+          ------------------------------------------------------------------------------------------- 
+
+44. 
