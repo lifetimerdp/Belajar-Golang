@@ -1376,4 +1376,13 @@ Ikuti instruksi yang diberikan di website golang
                 menggunakan struct method! (bukan struct yang dijadikan parameter dari function!)
           ------------------------------------------------------------------------------------------------------------------------
 
-43. 
+43. Interface kosong
+      --> Interface kosong adalah sebuah interface yang dapat berisi data tipe apapun yang ada di golang. Mau itu string,
+          int, floating point, slice, array, struct, dll.
+          
+          Beberapa contoh yang menggunakan interface kosong:   - fmt.Println()
+                                                               - panic()
+                                                               - recover()
+                                                               - dan lain-lain
+                                                               
+          -------------------------------------------------------------------------------------------
