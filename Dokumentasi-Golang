@@ -1266,7 +1266,7 @@ Ikuti instruksi yang diberikan di website golang
           }
           ----------------------------------------------------------------------------
       --> Cara pakai struct:
-          ----------------------------------------------------------------------------
+          
           func main() {
                // buat variable dari struct yang sudah dibuat
                var agus DataPerson
@@ -1288,7 +1288,7 @@ Ikuti instruksi yang diberikan di website golang
                   {agus witoyo Indonesia 24}
           ---------------------------------------------------------------------------
       --> Cara cepat isi data struct
-          ----------------------------------------------------------------------------
+          
           var agus = DataPerson {
                Name: "agus witoyo",
                Address: "Indonesia",
@@ -1297,4 +1297,28 @@ Ikuti instruksi yang diberikan di website golang
           ----------------------------------------------------------------------------
 
 41. Struct Method
-      --> 
+      --> Struct method adalah kemampuan struct yang mirip dengan function.
+          Jadi, seakan-akan struct mempunyai sebuah function.
+          -------------------------------------------------------------------------------
+          type DataPerson struct {
+            Name, Address string
+            Age           int
+          }
+          
+          // function ini, mempunyai fitur struct
+          func (person DataPerson) sayHello(name string) {
+               fmt.Println("Halo", person.Name, "Perkenalkan aku", name)
+          }
+          
+          func main() {
+               andy := DataPerson {
+                  Name: "andy",
+                  Address: "Indonesia",
+                  Age: 23,
+               }
+               
+               andy.sayHello("agus")
+          }
+          -------------------------------------------------------------------------------
+
+42. 
