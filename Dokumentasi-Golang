@@ -1359,8 +1359,8 @@ Ikuti instruksi yang diberikan di website golang
                Name string
           }
           
-          func (hewan Hewan) GetName() string {
-              return hewan.Name
+          func (hewan Hewan) GetName() string {       // ini gak masalah menggunakan function yang sama,
+              return hewan.Name                          karena memiliki struct yang berbeda
           }
           
           func main() {
@@ -1371,6 +1371,9 @@ Ikuti instruksi yang diberikan di website golang
                fmt.Println(cat.GetName)
                sayHello(cat)
           }
+          
+          Note: Disarankan saat menggunakan interface, jika membuat function yang menggunakan struct, pastikan
+                menggunakan struct method! (bukan struct yang dijadikan parameter dari function!)
           ------------------------------------------------------------------------------------------------------------------------
 
 43. 
