@@ -1321,4 +1321,56 @@ Ikuti instruksi yang diberikan di website golang
           }
           -------------------------------------------------------------------------------
 
-42. 
+42. Interface
+      --> interface di golang adalah sebuah kontrak yang dedeklarasikan. Jika isi dari kontrak yang
+          ada didalam interface sama dengan sebuah function tertentu (Nama dan return valuenya sama),
+          maka kalian dapat menggunakan semua function yang terikat dengan interface.
+          ------------------------------------------------------------------------------------------------------------------------
+          type HasName interface {                    // deklarasi interface
+               GetName() string                       // function GetName() dengan return value string adalah kontraknya
+          }
+          
+          func sayHello(hasName HasName) {            // function ini menggunakan interface HasName sebagai parameter
+               fmt.Println("Halo", hasName.GetName())    dan terikat secara tidak langsung dengan interface HasName
+          }                                           // function ini tidak bisa digunakan jika kalian belum membuat
+                                                         sebuah fuction yang terikat dengan kontrak interfacenya
+          
+          type Person struct {                        // deklarasi sebuah struct
+               Name string
+          }
+          
+          func (person Person) GetName() string {     // func GetName() dengan return value string, yang berarti sesuai
+               return person.Name                        dengan kontrak dari interface HasName (artinya mempunyai kemampuan
+          }                                              untuk menggunakan function atau data lainnya yang terikat secara langsung
+                                                         maupun tidak langsung dengan interface HasName
+          
+          func main() {
+               var andy = Person {
+                     Name: "andy",
+               }
+               fmt.Println(andy.GetName())
+               
+               // Saya mencoba mengakses func sayHello() yang terikat dengan interface HasName
+               sayHello(andy)
+          }
+          
+          // Kalian bahkan dapat menggunakan function GetName() lagi dengan data struct yang berbeda
+          type Hewan struct {
+               Name string
+          }
+          
+          func (hewan Hewan) GetName() string {
+              return hewan.Name
+          }
+          
+          func main() {
+               cat := Hewan {
+                  Name: "cat",
+               }
+               
+               fmt.Println(cat.GetName)
+               sayHello(cat)
+          }
+          ------------------------------------------------------------------------------------------------------------------------
+
+43. 
