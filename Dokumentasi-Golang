@@ -976,8 +976,8 @@ Ikuti instruksi yang diberikan di website golang
       --> Ini sebenarnya adalah multiple return value, tetapi dengan penamaan dan variable di bagian returnnya
           --------------------------------------------------------------------------------------
           func person() (name string, age int8, cmHeight float32, hobby string) {      // kalau tipe datanya sama semua, cukup
-               name = "agus"                                                              variable, variable, variable typeData (jika kalian 
-               age = 27                                                                   menggunakan 3 variable, boleh satu, dua, dst).
+               name = "agus"                                                              variable, variable, variable typeData
+               age = 27                                                                  
                cmHeight = 183.2
                hobby = "fishing"
                return
@@ -1020,7 +1020,7 @@ Ikuti instruksi yang diberikan di website golang
           output: 60
           -----------------------------------------------------------------------------------------
       --> Kalian bahkan bisa menggunakan data slice yang sudah ada, menjadi isi dari variadic function atau
-          variable / parameter argument dari function
+          variable / parameter argument dari function, selama tipe datanya sama
           ---------------------------------------------------------------------------------
           func main() {
             slice := []int {55, 21, 3}
@@ -1421,7 +1421,48 @@ Ikuti instruksi yang diberikan di website golang
           
           Namun di golang juga ada beberapa data, function atau lainnya yang memiliki tipe data Nil.
           Seperti interface, function, map, slice, pointer dan channel.
+          
+          Note: Ini berguna jika dalam sebuah function menggunakan parameter atau return valuenya adalah
+                interface, function, map, slice, pointer, atau sebuah channel. Karena dengan menggunakan
+                nil, kalian dapat menginialisasikan data yang kalian sepakati kosong dalam tipe data lain,
+                diterjemahkan menjadi data kosong di interface, function, map, slice, pointer, atau sebuah channel.
+          --------------------------------------------------------------------------------------------
+          Contoh kasus: sebuah function newMap() mengharuskan kalian menggunakan parameter string dan me-return data berupa map[].
+                        kalian ingin membuat sebuah map[] baru jika parameter berisi string kosong "". Maka kalian harus memberi tau
+                        map[] di function newMap() kalau parameter yang diisi adalah kosong dan kalian juga harus mereturn
+                        sebuah map[].
+          Jawaban     : Tentu saja bisa, dengan menggunakan nil (atau null dalam bahasa pemrograman lain) kalian dapat menerjemahkan
+                        data kosong dalam tipe data tertentu ke data interface, function, dan lainnya, dan tidak akan terjadi error.
+                        Silahkan lihat contoh function dibawah ini.
+          
+          func newMap(name string) map[string]string {
+               if name == "" {
+                  return nil              // kalian tidak bisa me-return string "" karena bukanlah sebuah data map[].
+               } else {                      kalian juga tidak bisa melakukan println.
+                  return map[string]string {
+                     "Name": name,
+                  }
+               }
+          }
+          
+          func main() {
+               var person map[string]string = newMap("")
+               if person == nil {
+                  fmt.Println("Data Kosong")
+               } else {
+                  fmt.Println(person)
+               }
+               
+               var orang map[string]string = newMap("agus")
+               if agus == nil {
+                  fmt.Println("Data Kosong")
+               } else {
+                  fmt.Println(agus)
+               }
+          }
+          
+          output person: Data Kosong
+          output orang : map[Name:agus]
           --------------------------------------------------------------------------------------------
           
-          --------------------------------------------------------------------------------------------
-          
+45. 
