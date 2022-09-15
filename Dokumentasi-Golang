@@ -1420,7 +1420,7 @@ Ikuti instruksi yang diberikan di website golang
           buatkan default valuenya. Misal var name string. maka otomatis valuenya akan bernilai string.
           
           Namun di golang juga ada beberapa data, function atau lainnya yang memiliki tipe data Nil.
-          Seperti interface, function, map, slice, pointer dan chanel.
+          Seperti interface, function, map, slice, pointer dan channel.
           --------------------------------------------------------------------------------------------
           
           --------------------------------------------------------------------------------------------
