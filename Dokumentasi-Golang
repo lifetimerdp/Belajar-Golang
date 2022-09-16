@@ -1493,7 +1493,7 @@ Ikuti instruksi yang diberikan di website golang
              if err == nil {
                 fmt.Println("Hasil:", hasil)
              } else {
-                fmt.Println(err)
+                fmt.Println(err.Error())
              }
           }
           
