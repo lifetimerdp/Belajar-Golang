@@ -1465,4 +1465,37 @@ Ikuti instruksi yang diberikan di website golang
           output orang : map[Name:agus]
           --------------------------------------------------------------------------------------------
           
-45. 
+45. Interface error
+      --> Di golang, kita juga dapat membuat sebuah interface error dengan menggunakan kontrak function bawaan Error().
+          --------------------------------------------------------------------------------------------
+          cara buat interface error:
+          
+          type error interface {
+               Error() string
+          }
+          
+      --> Menggunakan library khusus yang digunakan untuk menangani error.
+          import (
+             "fmt"
+             "errors"
+          )
+
+          func pembagian(nilai int, pembagi int) (int, error) {
+             if pembagi == 0 {
+                return 0, errors.New("Pesan Error: angka tidak boleh 0")
+             } else {
+                return nilai / pembagi, nil
+             }
+          }
+
+          func main() {
+             hasil, err := pembagian(42, 0)
+             if err == nil {
+                fmt.Println("Hasil:", hasil)
+             } else {
+                fmt.Println(err)
+             }
+          }
+          
+          output: Pesan Error: angka tidak boleh 0
+          --------------------------------------------------------------------------------------------
