@@ -1565,5 +1565,43 @@ Ikuti instruksi yang diberikan di website golang
          Tanpa harus membuat setiap duplikasinya. Dan juga, ini berarti jika kita mengubah salah satu data dari variable atau sumber
          manapun, maka semua data di variable atau sumber lain juga akan ikut berubah.
          ---------------------------------------------------------------------------------------------------------------------------
+         cara buat pointer:
+         
+         Tambahkan & diawal nama dari variable yang ingin dicopy
+         
+         var name1 = "abcdefg"
+         var name2 = &name1
+         
+         fmt.Println(name1)   output: abcdefg
+         fmt.Println(name2)   output: abcdefg
+         
+         var name2 = "gfedcba"
+         fmt.Println(name1)   output: gfedcba
+         fmt.Println(name2)   output: gfedcba
+         
+     --> Jika ingin mengubah keseluruhan dari variable pointer, maka harus menggunakan tanda *
+         type name struct {
+            name1, name2, name3 string
+         }
+         
+         func main() {
+            test := Name{"satu", "dua", "tiga"}
+            test2 := &test
+
+            test2.name2 = "joko"
+            fmt.Println(test)                      output: {satu joko tiga}
+            fmt.Println(test2)                     output: &{satu joko tiga}
+
+            test2 = &Name{"empat", "lima", "enam"}
+            fmt.Println(test)                         output: {satu koko tiga}
+            fmt.Println(test2)                        output: &{empat lima enam}
+
+            *test2 = Name{"empat", "lima", "enam"}
+            fmt.Println(test)                         output: {empat lima enam}
+            fmt.Println(test2)                        output: &{empat lima enam}
+         }
+         
          
          ---------------------------------------------------------------------------------------------------------------------------
+
+48. 
