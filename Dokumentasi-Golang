@@ -1543,4 +1543,27 @@ Ikuti instruksi yang diberikan di website golang
           output: Hasil 1000 is integer
           ---------------------------------------------------------------------------------------------
 
-47. 
+47. Pointer
+      --> Pointer adalah kemampuan untuk menggunakan hanya satu sumber dari banyak duplikasi data.
+          Misalnya, variable1 := [...]string {
+                                    "kucing",
+                                    "anjing",
+                                 }
+                    variable2 := variable1
+                    
+                    Umumnya jika kita mengubah variable2, maka variable1 tidak akan terpengaruh, dan datanya tetap sama.
+                    Alasan tidak berubah adalah karena variable2 menduplikasi data dari variable1.
+                    
+                    Artinya variable1 punya data {"kucing", "anjing"} dan
+                            variable2 juga punya data sendiri {"kucing", "anjing"}
+                            
+                    Jika kita ubah variable2[0] = "tikus"
+                    maka, variable1 punya data {"kucing", "anjing"} dan
+                          variable2 datanya berubah menjadi {"tikus", "anjing"}
+         
+         Nah, dengan menggunakan pointer, kita bisa membuat satu data yang sama yang dapat dipakai banyak variable atau function.
+         Tanpa harus membuat setiap duplikasinya. Dan juga, ini berarti jika kita mengubah salah satu data dari variable atau sumber
+         manapun, maka semua data di variable atau sumber lain juga akan ikut berubah.
+         ---------------------------------------------------------------------------------------------------------------------------
+         
+         ---------------------------------------------------------------------------------------------------------------------------
