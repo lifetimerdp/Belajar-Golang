@@ -1587,18 +1587,22 @@ Ikuti instruksi yang diberikan di website golang
          func main() {
             test := Name{"satu", "dua", "tiga"}
             test2 := &test
+            test3 := &test
 
             test2.name2 = "joko"
-            fmt.Println(test)                      output: {satu joko tiga}
-            fmt.Println(test2)                     output: &{satu joko tiga}
+            fmt.Println(test)                         output: {satu joko tiga}
+            fmt.Println(test2)                        output: &{satu joko tiga}
+            fmt.Println(test3)                        output: &{satu joko tiga}
 
             test2 = &Name{"empat", "lima", "enam"}
-            fmt.Println(test)                         output: {satu koko tiga}
+            fmt.Println(test)                         output: {satu joko tiga}
             fmt.Println(test2)                        output: &{empat lima enam}
+            fmt.Println(test3)                        output: &{satu joko tiga}
 
             *test2 = Name{"empat", "lima", "enam"}
             fmt.Println(test)                         output: {empat lima enam}
             fmt.Println(test2)                        output: &{empat lima enam}
+            fmt.Println(test3)                        output: &{empat lima enam}
          }
          
          
