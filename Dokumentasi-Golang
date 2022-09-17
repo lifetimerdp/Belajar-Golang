@@ -1500,4 +1500,47 @@ Ikuti instruksi yang diberikan di website golang
           output: Pesan Error: angka tidak boleh 0
           --------------------------------------------------------------------------------------------
 
-46. 
+46. Type assertions
+      --> Type assertions adalah kemampuan untuk mengubah tipe data ke tipe data yang di inginkan.
+          Umumnya ini digunakan untuk interface kosong.
+          ---------------------------------------------------------------------------------------------
+          contoh: ubah random() interface kosong, menjadi string
+          func random() interface{} {
+               return "OKAY"
+          }
+          
+          func main() {
+               var hasil interface{} = random()
+               hasilString := hasil.(string)
+               fmt.Println(hasilString)
+               
+               hasilInteger := hasil.(int)   ==> ini error / panic, karena return value dari random() adalah string, bukan int
+               fmt.Println(hasilInteger)
+          }
+          
+          output: OKAY
+          ---------------------------------------------------------------------------------------------
+      --> Cara otomatis mendeteksi dan menerapkan tipe data dari interface kosong
+      
+          func random() interface{} {
+               return 1000
+          }
+          
+          func main() {
+               var hasil interface{} = random()
+               switch value := hasil.(type) {
+               case string:
+                     fmt.Println("Hasil", value, "is string")
+               case int:
+                     fmt.Println("Hasil", value, "is integer")
+               case bool:
+                     fmt.Println("Hasil", value, "is boolean")
+               default:
+                     fmt.Println("Unknown type")
+               }
+          }
+          
+          output: Hasil 1000 is integer
+          ---------------------------------------------------------------------------------------------
+
+47. 
