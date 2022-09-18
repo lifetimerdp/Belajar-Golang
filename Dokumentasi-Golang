@@ -1593,19 +1593,20 @@ Ikuti instruksi yang diberikan di website golang
             fmt.Println(test)                         output: {satu joko tiga}
             fmt.Println(test2)                        output: &{satu joko tiga}
             fmt.Println(test3)                        output: &{satu joko tiga}
-
+            
+            ----------------------------------------------------------------------
             test2 = &Name{"empat", "lima", "enam"}
             fmt.Println(test)                         output: {satu joko tiga}
             fmt.Println(test2)                        output: &{empat lima enam}
             fmt.Println(test3)                        output: &{satu joko tiga}
-
-            *test2 = Name{"empat", "lima", "enam"}
+            
+            *test3 = Name{"empat", "lima", "enam"}
             fmt.Println(test)                         output: {empat lima enam}
             fmt.Println(test2)                        output: &{empat lima enam}
             fmt.Println(test3)                        output: &{empat lima enam}
-         }
-         
-         
+            --------------------------------------------------------------------
+         Note: jika kita melakukan 2 kali pointer yang berbeda pada variable yang sama, maka pointer terakhir tidak akan bekerja.
+               Contohnya seperti (&, *) pada variable yang sama.
          ---------------------------------------------------------------------------------------------------------------------------
 
 48. 
