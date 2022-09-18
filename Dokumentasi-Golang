@@ -1619,4 +1619,69 @@ Ikuti instruksi yang diberikan di website golang
          ---------------------------------------------------------------------------------------------------------------------------
 
 48. Pointer di function
-      --> 
+      --> Pointer di function digunakan untuk mengubah data asli dari parameter function.
+          -------------------------------------------------------------------------------
+          type Address struct {
+               Negara, Provinsi string
+          }
+          
+          func toIndonesia(address Address) {
+               address.Negara = "Indonesia"
+          }
+          
+          // Buat variable baru merujuk ke struct Address
+          alamat := Address {
+               Negara: "",
+               Provinsi: "Jakarta",
+          }
+          
+          toIndonesia(alamat)
+          fmt.Println(alamat)    output: {Jakarta}  // Atribut Negara tidak terisi walaupun di function sudah di isi,
+                                                         ini karena parameter address di function toIndonesia() tidak
+                                                         terhubung dengan variable alamat. Padahal keduanya merujuk ke
+                                                         data struct yang sama. Ini dikatakan pass by value.
+                                                         
+                                                         Agar keduanya terhubung, kalian dapat menggunakan pointer. Lihat
+                                                         contoh dibawah ini
+          
+          func toIndonesia(address *Address) {      // Gunakan * di bagian rujukan dari parameter
+               address.Negara = "Indonesia"
+          }
+          
+          // Buat variable baru merujuk ke struct Address
+          alamat := Address {
+               Negara: "",
+               Provinsi: "Jakarta",
+          }
+          
+          toIndonesia(&alamat)   // gunakan &variable saat ingin mengisi value dari parameter toIndonesia()
+          fmt.Println(alamat)    output: {Indonesia Jakarta}
+          
+          Sekarang parameter address di function toIndonesia() terhubung dengan variable alamat
+          
+          Note: Metode pointer ini sangat berguna untuk digunakan. Karena dapat mengurangi beban memori
+                karena data yang terus di duplikat (alias pass by value). Dengan pointer data tidak di duplikat,
+                namun hanya menciptakan cabang baru dari data asli yang sama.
+          
+          type Animal struct {
+               animal1, animal2 string
+          }
+          
+          data_asli := Animal{"kucing", "tikus"}
+          data2 := data_asli
+          
+          
+          # Penggambaran / visualisasi
+          
+          tanpa pointer:      data_asli              data2
+                                 |                     |
+                         {"kucing", "tikus"}   {"kucing", "tikus"}
+                         
+                         
+          dengan pointer:                    data_asli
+                                                 ⬇️
+                                                 ⬇️
+                                         {"kucing", "tikus"} ⬅️ ⬅️ data2
+          -------------------------------------------------------------------------------
+
+49. 
