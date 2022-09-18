@@ -1607,6 +1607,15 @@ Ikuti instruksi yang diberikan di website golang
             --------------------------------------------------------------------
          Note: jika kita melakukan 2 kali pointer yang berbeda pada variable yang sama, maka pointer terakhir tidak akan bekerja.
                Contohnya seperti (&, *) pada variable yang sama.
+               
+     --> Cara membuat pointer kosong
+         
+         1.1 pointer kosong tanpa merujuk ke interface atau data tipe lainnye
+         ==> var name *string
+         
+         1.2 pointer kosong yang merujuk ke sebuah data. Misalnya ke interface
+         ==> var name *NamaInterfacenya = new(NamaInterfacenya)
+         
          ---------------------------------------------------------------------------------------------------------------------------
 
 48. 
